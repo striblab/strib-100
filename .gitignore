@@ -14,6 +14,9 @@ data/build/*
 # !data/build/combined-data.csv
 
 
+data/.cache/*
+
+
 # Common
 .drake
 *yarn.lock
