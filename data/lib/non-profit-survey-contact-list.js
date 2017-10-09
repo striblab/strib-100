@@ -74,6 +74,7 @@ let query = `
       OR c.CompanyType LIKE 'trust%'
     )
     AND c.CompanyType NOT LIKE '%drop%'
+    AND c.State = 'MN'
 `;
 
 // Do the stuff
