@@ -69,8 +69,9 @@ let query = `
     Companies AS c
   WHERE
     (
-      c.CompanyType LIKE '%nonprofit%'
-      OR c.CompanyType LIKE '%charity%'
+      c.CompanyType LIKE 'nonprofit%'
+      OR c.CompanyType LIKE 'charity%'
+      OR c.CompanyType LIKE 'trust%'
     )
     AND c.CompanyType NOT LIKE '%drop%'
 `;
