@@ -18,8 +18,21 @@ Data for these projects lives on the [DataDrop server](https://github.com/stribl
 
 ### Data processing
 
-1. *Data processing steps here.*
-1. ...
+#### Non-profit 100
+
+Surveys are sent out via Google Forms to non-profit contacts so that they can be self-reported as much as possible.
+
+* Initial list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list.js`
+* Follow up list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list-follow-up.js --list=build/non-profit-survey-list-XXXXXX.csv --responses=GOOGLE_SHEET_ID`
+
+Environment variables needed:
+
+* MYSQL_HOST
+* MYSQL_USER
+* MYSQL_PASS
+* MYSQL_DATABASE
+* SURVEY_PASS
+* GOOGLE_API_KEY (used for URL shortener, and spreadsheet access)
 
 ## Embed
 
