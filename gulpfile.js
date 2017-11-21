@@ -46,7 +46,7 @@ gulp.task('html', () => {
   const content = exists('content.json') ? require('./content.json') : {};
 
   return gulp
-    .src(['templates/**/*.ejs.html', '!templates/**/_*.ejs.html'])
+    .src(['pages/**/*.ejs.html', '!pages/**/_*.ejs.html'])
     .pipe(
       include({
         prefix: '@@',
@@ -193,7 +193,7 @@ gulp.task('server', ['build'], () => {
 gulp.task('watch', () => {
   gulp.watch(['styles/**/*.scss'], ['styles']);
   gulp.watch(
-    ['templates/**/*', 'config.*json', 'package.json', 'content.json'],
+    ['pages/**/*', 'config.*json', 'package.json', 'content.json'],
     ['html:lint']
   );
   gulp.watch(['app/**/*', 'config.json'], ['js']);
