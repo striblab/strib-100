@@ -63,6 +63,7 @@
     "request": "^2.79.0",
     "run-sequence": "^1.2.2",
     "sander": "^0.6.0",
+    "strib-styles": "0.0.3",
     "stylelint-config-standard": "^17.0.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "underscore": "^1.8.3",

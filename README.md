@@ -2,16 +2,6 @@
 
 The Star Tribune Top 100 (business, non-profits, ceo's)
 
-## Legacy
-
-Currently, this project is being migrated here.  Currently, these pages are managed on a PHP server, and data was managed in Access databases.  The current pages for these projects are:
-
-* http://apps.startribune.com/top_100_business/revenueView.php
-* http://apps.startribune.com/top_100_exec_comp/topCeoView.php
-* http://apps.startribune.com/top_100_nonprofits/revenueView.php
-
-[Migration of data](https://github.com/MinneapolisStarTribune/newsroom-migrations/tree/master/201708-business-top-companies) to the DataDrop server.
-
 ## Data
 
 Data for these projects lives on the [DataDrop server](https://github.com/striblab/documentation).
@@ -20,10 +10,13 @@ Data for these projects lives on the [DataDrop server](https://github.com/stribl
 
 #### Non-profit 100
 
-Surveys are sent out via Google Forms to non-profit contacts so that they can be self-reported as much as possible.
+Surveys are sent out via Google Forms to non-profit contacts so that they can be self-reported as much as possible.  [2017 edition](https://docs.google.com/forms/d/12RoBNsV9JCPvU2tjMVjfqThU0r9ygGglHtdq8rUW_ro/edit).
 
 * Initial list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list.js`
 * Follow up list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list-follow-up.js --list=build/non-profit-survey-list-XXXXXX.csv --responses=GOOGLE_SHEET_ID`
+* Import survey data: `node data/lib/non-profit-survey-import.js --responses="GOOGLE_SHEET_ID"`
+    * This will create an SQL file in `data/build` that can be run.  This should update when needed and insert otherwise.
+    * Note: the logic is not present to find the appropriate officer ID when adding a new officer and salary, so, the first import may cause errors, but these should be fixed the next time you run it 
 
 Environment variables needed:
 
@@ -42,6 +35,16 @@ This project is best used as a full, standalone page, or an embed.  The best way
 <div data-pym-src="http://static.startribune.com/projects/strib-100">Loading...</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pym/1.1.2/pym.v1.min.js" type="text/javascript"></script>
 ```
+
+## Legacy
+
+Currently, this project is being migrated here.  Currently, these pages are managed on a PHP server, and data was managed in Access databases.  The current pages for these projects are:
+
+* http://apps.startribune.com/top_100_business/revenueView.php
+* http://apps.startribune.com/top_100_exec_comp/topCeoView.php
+* http://apps.startribune.com/top_100_nonprofits/revenueView.php
+
+[Migration of data](https://github.com/MinneapolisStarTribune/newsroom-migrations/tree/master/201708-business-top-companies) to the DataDrop server.
 
 ## Development
 

@@ -4,12 +4,12 @@
  * http://sass-lang.com/
  */
 
-@import 'fonts';
-@import 'variables';
-@import 'reset';
-@import 'helpers';
-@import 'base';
-@import 'site-view';
+// Strib styles.  Since this is going to be embedded, we use
+// root as false and a very specific wrapper.
+$root: false;
+$selector-wrapper: '.strib.aa.bb.cc.dd';
 
-// The project style is the main one to edit
+@import '../node_modules/strib-styles/source/styles/root.scss';
+
+// Project specific styles.  Split styles into files per component
 @import 'project';
