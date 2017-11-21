@@ -34,6 +34,7 @@ const del = require('del');
 const gulpContent = require('./lib/gulp-content.js');
 const gulpPublish = require('./lib/gulp-publish.js');
 const jest = require('./lib/gulp-jest.js');
+const data = require('./lib/gulp-data.js');
 const pkg = require('./package.json');
 const config = exists('config.custom.json')
   ? require('./config.custom.json')
@@ -177,6 +178,15 @@ gulp.task(
     rootDir: __dirname,
     // Not sure why full path is needed
     testMatch: [path.join(__dirname, 'tests/acceptance/*.test.js')]
+  })
+);
+
+// Get data for application
+gulp.task(
+  'data',
+  data('data', {
+    publishYear: 2017,
+    output: 'assets/non-profit-100.json'
   })
 );
 
