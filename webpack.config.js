@@ -15,11 +15,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /app\/.*\.js$/,
+        test: /app\/.*\.(js|svelte\.html)$/,
         loader: 'babel-loader',
         options: {
           cacheDirectory: true
         }
+      },
+      {
+        test: /app\/.*\.svelte\.html$/,
+        exclude: /node_modules/,
+        use: 'svelte-loader'
       }
     ]
   },

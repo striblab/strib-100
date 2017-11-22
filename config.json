@@ -1,7 +1,7 @@
 {
-  "about this file": "This document defines configuration for this project that is not content or copy.",
+  "about this file":
+    "This document defines configuration for this project that is not content or copy.",
   "projectIdentifier": "strib-100",
-
 
   "social": {
     "image": "assets/images/strib/strib-logo-name-social-card.png"
@@ -15,24 +15,23 @@
     "globals": [
       "https://cdnjs.cloudflare.com/ajax/libs/pym/1.2.2/pym.v1.min.js",
       "https://cdn.polyfill.io/v2/polyfill.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"
+      "http://static.startribune.com/assets/libs/lodash/4.17.4/lodash.min.js"
     ]
   },
 
-  "content": {
-
-  },
+  "content": {},
   "publish": {
-
     "default": {
       "bucket": "static.startribune.com",
       "path": "news/projects-staging/all/strib-100/",
-      "url": "http://static.startribune.com/news/projects-staging/all/strib-100/"
+      "url":
+        "http://static.startribune.com/news/projects-staging/all/strib-100/"
     },
     "testing": {
       "bucket": "stribtest-bucket",
       "path": "news/projects/strib-100/",
-      "url": "https://s3.amazonaws.com/stribtest-bucket/news/projects/strib-100/"
+      "url":
+        "https://s3.amazonaws.com/stribtest-bucket/news/projects/strib-100/"
     },
 
     "production": {

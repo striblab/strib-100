@@ -1,0 +1,35 @@
+<div class="company">
+  {{#if intialized}}
+    <h3>{{ company }}</h3>
+
+    <strong>
+      {{#if finances && finances.revenue}}
+        Revenue: ${{ currency(finances.revenue) }}
+      {{else}}
+        -
+      {{/if}}
+    </strong>
+
+    <p><strong>({{ city }})</strong> {{ shortDesc }}</p>
+  {{/if}}
+</div>
+
+<script>
+export default {
+  oncreate: function() {
+    // Allow data to set all propeties, since we can't set
+    // all from the markup of a component
+    this.observe('data', d => {
+      console.log(d);
+      if (_.isPlainObject(d)) {
+        this.set(d);
+        this.set({ intialized: true });
+      }
+    });
+  },
+
+  helpers: {
+    currency: new Intl.NumberFormat({ currency: 'USD' }).format
+  }
+};
+</script>

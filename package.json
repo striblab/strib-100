@@ -65,6 +65,8 @@
     "sander": "^0.6.0",
     "strib-styles": "0.0.3",
     "stylelint-config-standard": "^17.0.0",
+    "svelte": "^1.42.0",
+    "svelte-loader": "^2.1.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "underscore": "^1.8.3",
     "webpack": "^3.1.0",

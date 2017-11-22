@@ -12,4 +12,6 @@ $selector-wrapper: '.strib.aa.bb.cc.dd';
 @import '../node_modules/strib-styles/source/styles/root.scss';
 
 // Project specific styles.  Split styles into files per component
-@import 'project';
+.strib.aa.bb.cc.dd {
+  @import 'project';
+}
