@@ -13,10 +13,10 @@ Data for these projects lives on the [DataDrop server](https://github.com/stribl
 Surveys are sent out via Google Forms to non-profit contacts so that they can be self-reported as much as possible.  [2017 edition](https://docs.google.com/forms/d/12RoBNsV9JCPvU2tjMVjfqThU0r9ygGglHtdq8rUW_ro/edit).
 
 * Initial list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list.js`
-* Follow up list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list-follow-up.js --list=build/non-profit-survey-list-XXXXXX.csv --responses=GOOGLE_SHEET_ID`
+* Follow up list, outputs to `data/build/`: `node data/lib/non-profit-survey-contact-list-follow-up.js --list=data/build/non-profit-survey-list-XXXXXX.csv --responses=GOOGLE_SHEET_ID`
 * Import survey data: `node data/lib/non-profit-survey-import.js --responses="GOOGLE_SHEET_ID"`
     * This will create an SQL file in `data/build` that can be run.  This should update when needed and insert otherwise.
-    * Note: the logic is not present to find the appropriate officer ID when adding a new officer and salary, so, the first import may cause errors, but these should be fixed the next time you run it 
+    * Note: the logic is not present to find the appropriate officer ID when adding a new officer and salary, so, the first import may cause errors, but these should be fixed the next time you run it
 
 Environment variables needed:
 
