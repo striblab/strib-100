@@ -20,19 +20,20 @@ require('dotenv').load();
 
 // Settings
 const listYear = new Date().getFullYear();
-const listDate =
+const fileDate =
   '' +
   new Date()
     .toISOString()
     .slice(0, 10)
     .replace(/-/g, '');
 const sqlDate = '' + new Date().toISOString().slice(0, 10);
-const sqlDateTime =
-  '' +
-  new Date()
-    .toISOString()
-    .slice(0, 19)
-    .replace(/T/g, ' ');
+// const sqlDateTime =
+//   '' +
+//   new Date()
+//     .toISOString()
+//     .slice(0, 19)
+//     .replace(/T/g, ' ');
+const defaultFiscalYearEnd = listYear - 1 + '-12-31';
 
 // Make sure we have credentials
 if (
@@ -97,6 +98,7 @@ async function main() {
     let company = {
       COID: r['Star Tribune ID'],
       IRSNo: r['Federal employee ID number'],
+      Added: companyLookup.Added ? companyLookup.Added : sqlDate,
       Company: r['Organization Name'],
       WWW: r['Website'],
       Contact: r['Contact person\'s name'],
@@ -128,63 +130,83 @@ async function main() {
     let employeesLookup = _.find(current.employees, e => {
       return (
         e.COID === r['Star Tribune ID'] &&
-        e.Date &&
-        e.Date.toISOString().indexOf('' + listYear) === 0
+        e.PublishYear &&
+        e.PublishYear === listYear
       );
     });
     let employees = {
       ID: null,
       COID: r['Star Tribune ID'],
-      Total: parseNumber(r['Total number of employees']),
-      Date: sqlDate
+      Added: sqlDate,
+      PublishYear: listYear,
+      Total: parseNumber(r['Total number of employees'])
     };
     if (employeesLookup) {
       employees.ID = employeesLookup.ID;
+      employees.Added = employeesLookup.Added
+        ? employeesLookup.Added
+        : employees.Added;
     }
 
-    // Officer
-    let officerLookup = _.find(current.officers, e => {
-      return e.COID === r['Star Tribune ID'] && e.Last === r['Last Name'];
-    });
-    let officer = {
-      ID: null,
-      COID: r['Star Tribune ID'],
-      First: r['First Name'],
-      Last: r['Last Name'],
-      Title: r['Title']
-    };
-    if (officerLookup) {
-      officer.ID = officerLookup.ID;
-    }
+    // Officer, make sure there is at least a last name
+    let officer;
+    let salary;
+    if (r['Last Name'] && r['Salary']) {
+      let officerLookup = _.find(current.officers, e => {
+        return e.COID === r['Star Tribune ID'] && e.Last === r['Last Name'];
+      });
+      officer = {
+        ID: null,
+        COID: r['Star Tribune ID'],
+        First: r['First Name'],
+        Last: r['Last Name'],
+        Title: r['Title']
+      };
+      if (officerLookup) {
+        officer.ID = officerLookup.ID;
+      }
 
-    // NP Officer salary
-    let salaryLookup = _.find(current.salaries, e => {
-      return (
-        officerLookup &&
-        officerLookup.ID === e.OfficerID &&
-        e.FiscalYearEnd &&
-        ~e.FiscalYearEnd
-          .toISOString()
-          .indexOf(inputToSQLDate(r['Date of these data']))
+      // NP Officer salary.
+      // TODO: Currently not doing logic to handle adding an officer and
+      // salary, so an error will pop up when adding the salary,
+      // as there is no OfficerID.  But, the next time the import runs,
+      // it should work fine.
+      let salaryLookup = _.find(current.salaries, e => {
+        return (
+          officerLookup &&
+          officerLookup.ID === e.OfficerID &&
+          e.PublishYear &&
+          e.PublishYear === listYear
+        );
+      });
+      salary = {
+        ID: null,
+        OfficerID: null,
+        Added: sqlDate,
+        PublishYear: listYear,
+        FiscalYearEnd: inputToSQLDate(r['Date of these data']),
+        Salary: parseNumber(r['Salary']),
+        Bonus: parseNumber(r['Bonus']),
+        Other: parseNumber(r['Other compensation']),
+        Deferred: parseNumber(r['Deferred compensation']),
+        Benefit: parseNumber(r['Value of benefits']),
+        Total: parseNumber(r['Total compensation'])
+      };
+      if (salaryLookup) {
+        salary.ID = salaryLookup.ID;
+        salary.OfficerID = officerLookup.ID;
+        salary.Added = salaryLookup.Added ? salaryLookup.Added : salary.Added;
+      }
+      else if (officerLookup) {
+        salary.OfficerID = officerLookup.ID;
+      }
+    }
+    else {
+      console.error(
+        'No officer for ',
+        r['Star Tribune ID'],
+        r['Organization Name']
       );
-    });
-    let salary = {
-      ID: null,
-      OfficerID: null,
-      FiscalYearEnd: inputToSQLDate(r['Date of these data']),
-      Salary: parseNumber(r['Salary']),
-      Bonus: parseNumber(r['Bonus']),
-      Other: parseNumber(r['Other compensation']),
-      Deferred: parseNumber(r['Deferred compensation']),
-      Benefit: parseNumber(r['Value of benefits']),
-      Total: parseNumber(r['Total compensation'])
-    };
-    if (salaryLookup) {
-      salary.ID = salaryLookup.ID;
-      salary.OfficerID = officerLookup.ID;
-    }
-    else if (officerLookup) {
-      salary.OfficerID = officerLookup.ID;
     }
 
     // Finances
@@ -194,9 +216,12 @@ async function main() {
     let finances = {
       ID: null,
       COID: r['Star Tribune ID'],
+      Added: sqlDate,
       PublishYear: listYear,
-      FiscalYearEnd: inputToSQLDate(r['Date of these data']),
-      AnnualReportDate: inputToSQLDate(r['Date of these data']),
+      FiscalYearEnd:
+        inputToSQLDate(r['Date of these data']) || defaultFiscalYearEnd,
+      AnnualReportDate:
+        inputToSQLDate(r['Date of these data']) || defaultFiscalYearEnd,
       Source: r['Source of these data'],
       ContribGrants: parseNumber(r['Total contributions and grants']),
       Revenue: parseNumber(r['Total revenue']),
@@ -212,11 +237,13 @@ async function main() {
         r['Net unrealized gains/losses on investments']
       ),
       EOYBalance: parseNumber(r['Net assets or fund balances at end of year']),
-      InputSource: 'Automatically imported from ' + listYear + ' survey.',
-      InputTimestamp: sqlDateTime
+      InputSource: 'Automatically imported from ' + listYear + ' survey.'
     };
     if (financesLookup) {
       finances.ID = financesLookup.ID;
+      finances.Added = financesLookup.Added
+        ? financesLookup.Added
+        : finances.Added;
     }
 
     return {
@@ -249,26 +276,40 @@ async function main() {
       }[table];
 
       // Make query
-      let query = mysql.format(
-        'INSERT INTO ' +
-          tableName +
-          ' (' +
-          _.map(data, (v, k) => {
-            return k;
-          }).join(', ') +
-          ') VALUES (' +
-          _.map(data, () => {
-            return '?';
-          }).join(', ') +
-          ') ON DUPLICATE KEY UPDATE ' +
-          _.map(data, (v, k) => {
-            return k + ' = ?';
-          }).join(', '),
-        _.map(data).concat(_.map(data))
-      );
+      if (_.size(data)) {
+        let query = mysql.format(
+          'INSERT INTO ' +
+            tableName +
+            ' (' +
+            _.map(data, (v, k) => {
+              return k;
+            }).join(', ') +
+            ') VALUES (' +
+            _.map(data, () => {
+              return '?';
+            }).join(', ') +
+            ') ON DUPLICATE KEY UPDATE ' +
+            _.map(data, (v, k) => {
+              return k + ' = ?';
+            }).join(', '),
+          _.map(data).concat(_.map(data))
+        );
 
-      statements.push(query);
+        statements.push(query);
+      }
     });
+
+    // Remove duplicate salary data
+    let q = `
+    DELETE
+      dups
+    FROM
+      NonProfit_Finances as dups, NonProfit_Finances as keep
+    WHERE
+      dups.OfficerID = keep.OfficerID
+      AND dups.PublishYear = keeps.PublishYear
+      AND dups.ID < keeps.ID;
+    `;
   });
   statements.push('COMMIT');
 
@@ -277,7 +318,7 @@ async function main() {
       __dirname,
       '..',
       'build',
-      'non-profit-survey-import-' + listDate + '.sql'
+      'non-profit-survey-import-' + fileDate + '.sql'
     ),
     statements.join('; \n\n')
   );
@@ -325,7 +366,7 @@ async function currentData() {
         __dirname,
         '..',
         'build',
-        'non-profit-backup-' + listDate + '-' + set + '.json'
+        'non-profit-backup-' + fileDate + '-' + set + '.json'
       ),
       JSON.stringify(d)
     );
