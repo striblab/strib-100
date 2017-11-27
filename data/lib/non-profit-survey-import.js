@@ -105,7 +105,8 @@ async function main() {
       ContactPhone: r['Contact person\'s phone'],
       ContactEmail: r['Contact person\'s email'],
       Description: r['Organization long description'],
-      ShortDesc: r['Organization short description']
+      ShortDesc: r['Organization short description'],
+      Category: undefined
     };
 
     // Address
@@ -298,18 +299,6 @@ async function main() {
         statements.push(query);
       }
     });
-
-    // Remove duplicate salary data
-    let q = `
-    DELETE
-      dups
-    FROM
-      NonProfit_Finances as dups, NonProfit_Finances as keep
-    WHERE
-      dups.OfficerID = keep.OfficerID
-      AND dups.PublishYear = keeps.PublishYear
-      AND dups.ID < keeps.ID;
-    `;
   });
   statements.push('COMMIT');
 
