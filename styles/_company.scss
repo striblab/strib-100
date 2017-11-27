@@ -1,0 +1,31 @@
+/**
+ * Company specific styles
+ */
+
+.company {
+  margin-bottom: 2em;
+
+  .company-heading {
+    padding-bottom: 1em;
+    border-bottom: 1px solid map-get($grays, 'lighter');
+    margin-bottom: 1em;
+  }
+
+  .rank {
+    font-size: 4em;
+    text-align: center;
+    margin: 0;
+    padding: 0.25em 0.5em;
+    background-color: map-get($grays, 'lighter');
+    border-radius: 0.1em;
+  }
+
+  .ceo-headshot,
+  .logo {
+    text-align: center;
+
+    img {
+      max-height: 8em;
+    }
+  }
+}

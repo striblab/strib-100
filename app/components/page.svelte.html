@@ -4,9 +4,23 @@
   {{/if}}
 
   {{#if companies}}
+    <div class="category-filter">
+      <form>
+        <fieldset>
+          <legend>Sort <span class="sr-only">company list</span></legend>
+
+          <button type="button">Social services</button>
+          <button type="button">Healthcare</button>
+          <button type="button">Arts</button>
+          <button type="button">Education</button>
+          <button type="button">Other</button>
+        </fieldset>
+      </form>
+    </div>
+
     <div class="company-list">
       {{#each companies as company, ci }}
-        <Company data="{{ company }}" />
+        <Company data="{{ company }}" filter="{{ filter }}" />
       {{/each}}
     </div>
   {{/if}}

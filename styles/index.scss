@@ -13,5 +13,7 @@ $selector-wrapper: '.strib.aa.bb.cc.dd';
 
 // Project specific styles.  Split styles into files per component
 .strib.aa.bb.cc.dd {
+  @import 'grid';
   @import 'project';
+  @import 'company';
 }

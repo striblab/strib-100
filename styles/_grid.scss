@@ -1,0 +1,56 @@
+/**
+ * Simple, responsive grid
+ */
+
+$grid-padding: 0.5rem !default;
+
+.row {
+  margin-left: -1 * $grid-padding;
+  margin-right: -1 * $grid-padding;
+
+  &::after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .col {
+    display: inline;
+    vertical-align: baseline;
+    padding-left: $grid-padding;
+    padding-right: $grid-padding;
+    float: left;
+  }
+
+  // 0 - 100 by 5
+  @for $i from 0 through 20 {
+    .col-#{($i * 5)} {
+      width: ($i * 5) * 1%;
+    }
+
+    @each $name, $size in $breakpoints {
+      @media (max-width: #{$size}) {
+        .col-#{$name}-#{($i * 5)} {
+          width: ($i * 5) * 1%;
+        }
+      }
+    }
+  }
+
+  // 33 and 66
+  @for $i from 1 through 2 {
+    .col-#{($i * 33)} {
+      width: ($i * 33.33332) * 1%;
+    }
+
+    @each $name, $size in $breakpoints {
+      @media (max-width: #{$size}) {
+        .col-#{$name}-#{($i * 33)} {
+          width: ($i * 33.33332) * 1%;
+        }
+      }
+    }
+  }
+}

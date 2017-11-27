@@ -1,16 +1,71 @@
 <div class="company">
   {{#if intialized}}
-    <h3>{{ company }}</h3>
+    <div class="company-heading row">
+      <div class="col col-25">
+        <p class="rank">
+          <span class="sr-only">The overall ranking of this company is</span>
+          <span>{{ rank }}</span>
+        </p>
+      </div>
 
-    <strong>
-      {{#if finances && finances.revenue}}
-        Revenue: ${{ currency(finances.revenue) }}
-      {{else}}
-        -
-      {{/if}}
-    </strong>
+      <div class="col col-75">
+        <h3>{{ company }}</h3>
+        <p>
+          {{ shortDesc || description }}
+          {{#if www}}
+            <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">{{ www.replace(/(^https?:\/\/(www.)?)|^www./i, '').replace(/\/$/, '') }}</a>
+          {{/if}}
+        <p>
+      </div>
+    </div>
 
-    <p><strong>({{ city }})</strong> {{ shortDesc }}</p>
+    <div class="company-details row">
+      <div class="col col-20">
+        <dl>
+          <dt>Ranking last year:</dt><dd>TODO</dd>
+          <dt>City:</dt><dd>{{ city }}</dd>
+          <dt>Sector:</dt><dd>TODO</dd>
+        </dl>
+      </div>
+
+      <div class="col col-20">
+        <div class="logo">
+          <img src="https://4.bp.blogspot.com/-Kqg8YKq7_II/UNEUKIV5BTI/AAAAAAAABs0/JOE6NzB5zNM/s1600/generic+company+logo.jpg" />
+        </div>
+      </div>
+
+      <div class="col col-20">
+        {{#if finances}}
+          <h4 class="sr-only">Company financial details</h4>
+
+          <dl>
+            <dt>Revenue:</dt><dd>${{ currency(finances.revenue) }}</dd>
+            <dt>1-year % change:</dt><dd>{{ prevFinances && prevFinances.revenue ? Math.round((finances.revenue - prevFinances.revenue) / prevFinances.revenue) + '%' : '-' }}</dd>
+            <dt>Revenue-exp ratio:</dt><dd>{{ Math.round(finances.revenue / finances.expenses * 100) / 100 }}</dd>
+            <dt>Excess:</dt><dd>${{ currency(finances.excess) }}</dd>
+          </dl>
+        {{/if}}
+      </div>
+
+      <div class="col col-20">
+        <div class="ceo-headshot">
+          <img src="http://pr2015.aaschool.ac.uk/submission/uploaded_files/PHD/thumbnails800/William%20Hutchins%20Orr-generic-headshot-female.jpg" />
+        </div>
+      </div>
+
+      <div class="col col-20">
+        {{#if officer}}
+          <h4 class="sr-only">Leadership details</h4>
+
+          <dl>
+            <dt>CEO:</dt><dd>{{ officer.first + ' ' + officer.last }}</dd>
+            <dt>Compensation:</dt><dd>${{ currency(officer.total) }}</dd>
+            <dt>1-year % change:</dt><dd>-</dd>
+            <dt>Compensation as % of expenses:</dt><dd>{{ Math.round(officer.total / finances.revenue * 100 * 10000) / 10000 }}%</dd>
+          </dl>
+        {{/if}}
+      </div>
+    </div>
   {{/if}}
 </div>
 
