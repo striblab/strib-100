@@ -31,7 +31,9 @@
 
         <div class="col col-20">
           <div class="logo">
-            <img src="https://4.bp.blogspot.com/-Kqg8YKq7_II/UNEUKIV5BTI/AAAAAAAABs0/JOE6NzB5zNM/s1600/generic+company+logo.jpg" />
+            {{#if hasLogo}}
+              <img src="./assets/logos/{{ coid }}.png" alt="Company logo for {{ company }}">
+            {{/if}}
           </div>
         </div>
 
@@ -49,8 +51,12 @@
         </div>
 
         <div class="col col-20">
-          <div class="ceo-headshot">
-            <img src="http://pr2015.aaschool.ac.uk/submission/uploaded_files/PHD/thumbnails800/William%20Hutchins%20Orr-generic-headshot-female.jpg" />
+          <div class="ceo-headshot" data-officer-id="{{ officer.officerId }}">
+            {{#if officer && officer.hasImage}}
+              <img src="./assets/ceos/{{ officer.officerId }}.png" alt="Headshot for {{ officer.first + ' ' + officer.last }}">
+            {{else}}
+              <img src="./assets/images/generic-headshot.jpg" alt="Generic headshot image">
+            {{/if}}
           </div>
         </div>
 

@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "The Star Tribune Top 100 (business, non-profits, ceo's)",
   "author": {
-    "name":
-      "Star Tribune visuals team, Jeff Hargarten, MaryJo Webster, CJ Sinner, Alan Palazzolo",
+    "name": "Star Tribune visuals team, Jeff Hargarten, MaryJo Webster, CJ Sinner, Alan Palazzolo",
     "email": "alan.palazzolo@startribune.com"
   },
   "repository": {
@@ -34,6 +33,7 @@
     "d3-queue": "^3.0.7",
     "del": "^2.2.2",
     "dotenv": "^4.0.0",
+    "fs-extra": "^4.0.2",
     "google-auth-library": "^0.10.0",
     "google-url": "0.0.4",
     "googleapis": "^19.0.0",
@@ -58,6 +58,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.19.2",
     "mysql": "^2.15.0",
+    "node-fetch": "^1.7.3",
     "openurl": "^1.1.1",
     "parse-address": "0.0.8",
     "parse-full-name": "^1.2.3",

@@ -15,6 +15,10 @@ Surveys are sent out via Google Forms to non-profit contacts so that they can be
 * Import survey data: `node data/lib/non-profit-survey-import.js --responses="GOOGLE_SHEET_ID"`
     * This will create an SQL file in `data/build` that can be run.  This should update when needed and insert otherwise.
     * Note: the logic is not present to find the appropriate officer ID when adding a new officer and salary, so, the first import may cause errors, but these should be fixed the next time you run it
+* Get legacy images.  This should already be done.
+    * Download the images: `node data/lib/non-profit-dl-existing-logs.js`
+    * `for file in data/build/logos/*.gif; do convert $file "assets/logos/`basename $file .gif`.png"; done;`
+    * Note that some of the files are corrupt or bad.
 
 Environment variables needed:
 
