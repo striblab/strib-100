@@ -36,13 +36,13 @@ dt {
   legend {
     font-size: 1em;
     float: left;
-    margin-right: 0.5em;
-    padding-top: 0.15em;
+    margin-right: 0.85em;
+    padding-top: 0.5em;
   }
 
   button {
     background-color: map-get($grays, 'lighter');
-    padding: 0.25em 0.5em;
+    padding: 0.5em 0.5em;
     border: 0;
     border-radius: 0.2em;
     margin-right: 0.5em;
@@ -50,6 +50,14 @@ dt {
     &:hover {
       background-color: map-get($grays, 'light');
       cursor: pointer;
+    }
+
+    &.active {
+      border: 2px solid map-get($grays, 'light');
+    }
+
+    &.undefined {
+      background-color: $color-white;
     }
   }
 }

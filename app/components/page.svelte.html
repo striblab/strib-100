@@ -7,13 +7,11 @@
     <div class="category-filter">
       <form>
         <fieldset>
-          <legend>Sort <span class="sr-only">company list</span></legend>
+          <legend>Filter <span class="sr-only">company list</span></legend>
 
-          <button type="button">Social services</button>
-          <button type="button">Healthcare</button>
-          <button type="button">Arts</button>
-          <button type="button">Education</button>
-          <button type="button">Other</button>
+          {{#each filters as f}}
+            <button type="button" class="{{ f.id }} {{ filter === f.id ? 'active' : '' }}" on:click="set({ filter: f.id })">{{ f.name }}</button>
+          {{/each}}
         </fieldset>
       </form>
     </div>
@@ -33,6 +31,20 @@ import Company from './company.svelte.html';
 export default {
   components: {
     Company
+  },
+
+  data() {
+    return {
+      filter: undefined,
+      filters: [
+        { id: undefined, name: 'All' },
+        { id: 'social-services', name: 'Social services' },
+        { id: 'healthcare', name: 'Healthcare' },
+        { id: 'arts', name: 'Arts' },
+        { id: 'education', name: 'Education' },
+        { id: 'other', name: 'Other' }
+      ]
+    };
   }
 };
 </script>
