@@ -3,7 +3,7 @@
     {{#if intialized}}
       <div class="company-heading row">
         <div class="col col-25">
-          <p class="rank">
+          <p class="rank category {{ category }}">
             <span class="sr-only">The overall ranking of this company is</span>
             <span>{{ rank }}</span>
           </p>
@@ -12,6 +12,8 @@
         <div class="col col-75">
           <h3>{{ company }}</h3>
           <p>
+            <span class="category {{ category }}-fg">{{ categoryName }}</span><br>
+
             {{ shortDesc || description }}
             {{#if www}}
               <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">{{ www.replace(/(^https?:\/\/(www.)?)|^www./i, '').replace(/\/$/, '') }}</a>
@@ -93,6 +95,14 @@ export default {
 
   helpers: {
     currency: new Intl.NumberFormat({ currency: 'USD' }).format
+  },
+
+  computed: {
+    categoryName: (categories, category) => {
+      return category && _.find(categories, { id: category })
+        ? _.find(categories, { id: category }).name
+        : '';
+    }
   }
 };
 </script>

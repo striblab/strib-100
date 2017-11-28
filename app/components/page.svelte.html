@@ -9,8 +9,8 @@
         <fieldset>
           <legend>Filter <span class="sr-only">company list</span></legend>
 
-          {{#each filters as f}}
-            <button type="button" class="{{ f.id }} {{ filter === f.id ? 'active' : '' }}" on:click="set({ filter: f.id })">{{ f.name }}</button>
+          {{#each categories as f}}
+            <button type="button" class="category {{ f.id }} {{ filter === f.id ? 'active' : '' }}" on:click="set({ filter: f.id })">{{ f.name }}</button>
           {{/each}}
         </fieldset>
       </form>
@@ -18,7 +18,7 @@
 
     <div class="company-list">
       {{#each companies as company, ci }}
-        <Company data="{{ company }}" filter="{{ filter }}" />
+        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" />
       {{/each}}
     </div>
   {{/if}}
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       filter: undefined,
-      filters: [
+      categories: [
         { id: undefined, name: 'All' },
         { id: 'social-services', name: 'Social services' },
         { id: 'healthcare', name: 'Healthcare' },

@@ -106,7 +106,7 @@ async function main() {
       ContactEmail: r['Contact person\'s email'],
       Description: r['Organization long description'],
       ShortDesc: r['Organization short description'],
-      Category: undefined
+      Category: r['What category does your organization fit best?']
     };
 
     // Address

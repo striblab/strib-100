@@ -15,5 +15,6 @@ $selector-wrapper: '.strib.aa.bb.cc.dd';
 .strib.aa.bb.cc.dd {
   @import 'grid';
   @import 'project';
+  @import 'page';
   @import 'company';
 }
