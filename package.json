@@ -1,14 +1,15 @@
 {
-  "name": "strib-100",
+  "name": "strib-nonprofit-100-2017",
   "version": "0.0.1",
   "description": "The Star Tribune Top 100 (business, non-profits, ceo's)",
   "author": {
-    "name": "Star Tribune visuals team, Jeff Hargarten, MaryJo Webster, CJ Sinner, Alan Palazzolo",
+    "name":
+      "Star Tribune visuals team, Jeff Hargarten, MaryJo Webster, CJ Sinner, Alan Palazzolo",
     "email": "alan.palazzolo@startribune.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/striblab/strib-100.git"
+    "url": "https://github.com/striblab/strib-nonprofit-100-2017.git"
   },
   "main": "app/index.js",
   "scripts": {

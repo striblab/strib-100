@@ -1,14 +1,12 @@
-# Star Tribune Top 100
+# Star Tribune Nonprofit 100
 
-The Star Tribune Top 100 (business, non-profits, ceo's)
+The Star Tribune top nonprofits for 2017
 
 ## Data
 
 Data for these projects lives on the [DataDrop server](https://github.com/striblab/documentation).
 
 ### Data processing
-
-#### Non-profit 100
 
 Surveys are sent out via Google Forms to non-profit contacts so that they can be self-reported as much as possible.  [2017 edition](https://docs.google.com/forms/d/12RoBNsV9JCPvU2tjMVjfqThU0r9ygGglHtdq8rUW_ro/edit).
 
@@ -32,7 +30,7 @@ Environment variables needed:
 This project is best used as a full, standalone page, or an embed.  The best way to embed the piece is with the following code:
 
 ```html
-<div data-pym-src="http://static.startribune.com/projects/strib-100">Loading...</div>
+<div data-pym-src="http://static.startribune.com/projects/strib-nonprofit-100-2017">Loading...</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pym/1.1.2/pym.v1.min.js" type="text/javascript"></script>
 ```
 
@@ -215,13 +213,13 @@ Publishing is configured in the `config.json` file.  The `publish` property can 
   "publish": {
     "default": {
       "bucket": "static.startribune.com",
-      "path": "news/projects-staging/all/strib-100/",
-      "url": "http://static.startribune.com/news/projects-staging/all/strib-100/"
+      "path": "news/projects-staging/all/strib-nonprofit-100-2017/",
+      "url": "http://static.startribune.com/news/projects-staging/all/strib-nonprofit-100-2017/"
     },
     "production": {
       "bucket": "static.startribune.com",
-      "path": "news/projects/all/strib-100/",
-      "url": "http://static.startribune.com/news/projects/all/strib-100/"
+      "path": "news/projects/all/strib-nonprofit-100-2017/",
+      "url": "http://static.startribune.com/news/projects/all/strib-nonprofit-100-2017/"
     }
   }
 }
