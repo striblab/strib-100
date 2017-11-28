@@ -5,14 +5,13 @@
  */
 
 // Strib styles.  Since this is going to be embedded, we use
-// root as false and a very specific wrapper.
-$root: false;
+// a very specific wrapper.
 $selector-wrapper: '.strib.aa.bb.cc.dd';
 
-@import '../node_modules/strib-styles/source/styles/root.scss';
+@import '../node_modules/strib-styles/source/styles/default-wrapper.scss';
 
 // Project specific styles.  Split styles into files per component
-.strib.aa.bb.cc.dd {
+#{$selector-wrapper} {
   @import 'grid';
   @import 'project';
   @import 'page';
