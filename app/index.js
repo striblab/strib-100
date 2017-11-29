@@ -6,9 +6,15 @@
 // /* global _ */
 'use strict';
 
+console.error('WTF');
+
 // Dependencies
 import utilsFn from './utils.js';
 import Page from './components/page.svelte.html';
+// Load files here since managing paths to data from within
+// the CMS has not been figured yet (or at least in a
+// sustainable way)
+import companies from '../assets/non-profit-100.json';
 
 // Setup utils function
 let u = utilsFn({});
@@ -17,23 +23,24 @@ let u = utilsFn({});
 const page = new Page({
   target: document.querySelector('#np-app-container'),
   data: {
-    loading: true,
+    companies: companies,
+    loading: false,
     utils: u
   }
 });
 
 // Load company data
-fetch('./assets/non-profit-100.json')
-  .then(response => {
-    return response.json();
-  })
-  .then(companies => {
-    page.set({
-      companies: companies,
-      loading: false
-    });
-  })
-  .catch(error => {
-    console.error(error);
-    page.set({ loading: false, errorLoading: true });
-  });
+// fetch('./assets/non-profit-100.json')
+//   .then(response => {
+//     return response.json();
+//   })
+//   .then(companies => {
+//     page.set({
+//       companies: companies,
+//       loading: false
+//     });
+//   })
+//   .catch(error => {
+//     console.error(error);
+//     page.set({ loading: false, errorLoading: true });
+//   });

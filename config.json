@@ -2,6 +2,11 @@
   "about this file":
     "This document defines configuration for this project that is not content or copy.",
   "projectIdentifier": "strib-nonprofit-100-2017",
+  "cms": {
+    "id": "460547793",
+    "pages": [],
+    "lcd": ["460553323"]
+  },
   "social": {
     "image": "assets/images/strib/strib-logo-name-social-card.png"
   },
@@ -17,23 +22,22 @@
       "http://static.startribune.com/assets/libs/lodash/4.17.4/lodash.min.js"
     ]
   },
-  "content": {},
   "publish": {
     "default": {
       "bucket": "static.startribune.com",
-      "path": "news/projects-staging/all/strib-nonprofit-100-2017/",
+      "path": "news/projects-staging/all/strib-nonprofit-100-2017",
       "url":
         "http://static.startribune.com/news/projects-staging/all/strib-nonprofit-100-2017/"
     },
     "testing": {
       "bucket": "stribtest-bucket",
-      "path": "news/projects/strib-nonprofit-100-2017/",
+      "path": "news/projects/strib-nonprofit-100-2017",
       "url":
         "https://s3.amazonaws.com/stribtest-bucket/news/projects/strib-nonprofit-100-2017/"
     },
     "production": {
       "bucket": "static.startribune.com",
-      "path": "news/projects/all/strib-nonprofit-100-2017/",
+      "path": "news/projects/all/strib-nonprofit-100-2017",
       "url":
         "http://static.startribune.com/news/projects/all/strib-nonprofit-100-2017/"
     }

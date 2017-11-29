@@ -48,6 +48,14 @@ Currently, this project is being migrated here.  Currently, these pages are mana
 
 [Migration of data](https://github.com/MinneapolisStarTribune/newsroom-migrations/tree/master/201708-business-top-companies) to the DataDrop server.
 
+## CMS
+
+This project is meant to live within the [Star Tribune CMS](https://cms.clickability.com/cms).  Overall, this means that the markup and content are stored within the CMS, while the styling and javascript is created and managed here.
+
+It is necessary to have [news-platform](https://github.com/MinneapolisStarTribune/news-platform/) running locally as this will create a connection to the CMS data.  It is also important to have it configured with the `ASSETS_STATIC_URL` environment variable set to `http://localhost:3000/` so that [news-platform](https://github.com/MinneapolisStarTribune/news-platform/) can find the files in this project.
+
+Once a CMS article has been created and the template is set up, make sure to include the article ID in `config.json`.
+
 ## Development
 
 ### Install
@@ -66,6 +74,8 @@ The following should be performed for initial and each code update:
 ### Local
 
 To run a local web server that will auto-reload with [Browsersync](https://browsersync.io/), watch for file changes and re-build: `gulp develop`
+
+This will proxy your local version of `news-platform`.  To proxy the mobile version use: `gulp develop --mobile`  Note that you can have both develop processes running at one time.
 
 ### Directories and files
 

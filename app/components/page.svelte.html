@@ -18,7 +18,7 @@
 
     <div class="company-list">
       {{#each companies as company, ci }}
-        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" />
+        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" />
       {{/each}}
     </div>
   {{/if}}
