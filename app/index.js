@@ -6,8 +6,6 @@
 // /* global _ */
 'use strict';
 
-console.error('WTF');
-
 // Dependencies
 import utilsFn from './utils.js';
 import Page from './components/page.svelte.html';

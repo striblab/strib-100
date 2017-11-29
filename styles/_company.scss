@@ -5,6 +5,10 @@
 .company {
   margin-bottom: 2em;
 
+  &.no-show {
+    display: none;
+  }
+
   .company-heading {
     padding-bottom: 1em;
     border-bottom: 1px solid map-get($grays, 'lighter');
