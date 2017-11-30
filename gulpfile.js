@@ -193,6 +193,15 @@ gulp.task(
 
 // Web server for development.  Do build first to ensure something is there.
 gulp.task('server', ['build'], () => {
+  // Mostly for debugging
+  if (argv['cms'] === false) {
+    return browserSync.init({
+      port: 3000,
+      server: './build/',
+      files: './build/**/*'
+    });
+  }
+
   // Proxy the dev version of news-platform.  (assumes the host file has been set up)
   // https://github.com/MinneapolisStarTribune/news-platform
   //
