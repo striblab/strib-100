@@ -29,7 +29,7 @@
     "babel-preset-stage-3": "^6.17.0",
     "browser-sync": "^2.18.12",
     "chrome-remote-interface": "^0.23.2",
-    "d3-dsv": "^1.0.7",
+    "d3-dsv": "^1.0.8",
     "d3-queue": "^3.0.7",
     "del": "^2.2.2",
     "dotenv": "^4.0.0",

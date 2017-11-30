@@ -16,9 +16,11 @@ Surveys are sent out via Google Forms to non-profit contacts so that they can be
     * This will create an SQL file in `data/build` that can be run.  This should update when needed and insert otherwise.
     * Note: the logic is not present to find the appropriate officer ID when adding a new officer and salary, so, the first import may cause errors, but these should be fixed the next time you run it
 * Get legacy images.  This should already be done.
-    * Download the images: `node data/lib/non-profit-dl-existing-logs.js`
+    * Download the images: `node data/lib/non-profit-dl-existing-logos.js`
     * `for file in data/build/logos/*.gif; do convert $file "assets/logos/`basename $file .gif`.png"; done;`
-    * Note that some of the files are corrupt or bad.
+        * Note that some of the files are corrupt or bad.
+        * **WARNING** This will overwrite the existing files.  Not sure `convert` has a way to not overwrite.
+* To bring in the new data from the database run: `gulp data`
 
 Environment variables needed:
 
@@ -27,7 +29,9 @@ Environment variables needed:
 * MYSQL_PASS
 * MYSQL_DATABASE
 * SURVEY_PASS
-* GOOGLE_API_KEY (used for URL shortener, and spreadsheet access)
+* GOOGLE_API_KEY (used for URL shortener)
+* GOOGLE_AUTH_CLIENT_EMAIL (used for spreadsheet access)
+* GOOGLE_AUTH_PRIVATE_KEY (used for spreadsheet access)
 
 ## Embed
 
