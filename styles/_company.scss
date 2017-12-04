@@ -67,6 +67,12 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
     
  .company {
+    padding-bottom: 0.5em;
+	border-bottom: 2px solid #e8e8e8;
+	margin-bottom: 0.5em; 
+     
+     
+
      
     .rank {margin-left:25%;margin-right:25%;}
      
@@ -74,6 +80,10 @@
     padding-bottom: 0em;
     border-bottom: none;
     margin-bottom: 0em;
+        p {
+            font-family: "Benton Sans", sans-serif;
+            margin-bottom:0;
+        }    
     }
     
     .ceo-desktop {float:none;}
