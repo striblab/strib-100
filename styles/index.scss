@@ -10,6 +10,9 @@ $selector-wrapper: '.strib.aa.bb.cc.dd';
 
 @import '../node_modules/strib-styles/source/styles/default-wrapper.scss';
 
+// Utilities
+@import 'functions';
+
 // Project specific styles.  Split styles into files per component
 #{$selector-wrapper} {
   @import 'grid';

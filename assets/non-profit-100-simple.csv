@@ -1,4 +1,5 @@
 coid,company,officerName,officerID
+2526,Blue Cross and Blue Shield of Minnesota,Michael Guyette,11909
 416011702,Mayo Clinic,John Noseworthy,11646
 411242261,Medica,David Tilford,11203
 363261413,Allina Health System,Penny Wheeler,12065
@@ -49,6 +50,8 @@ coid,company,officerName,officerID
 411429149,Pheasants Forever Inc.,Howard Vincent,10732
 411865874,Grand Itasca Clinic and Hospital,Michael Youso,11696
 410736870,MRCI WorkSource,Brian Benshoof,11785
+410698597,Salvation Army - Northern Division,Lonneal Richardson,111847
+410706131,Walker Methodist,Scott Riddle,11906
 411302487,Catholic Charities of the Archdiocese of St. Paul & Minneapolis,Tim Marx,11708
 410888641,St. Therese Foundation,Barbara Rode,10812
 411949230,Glencoe Regional Health Services,Jon Braband,63785
@@ -75,7 +78,7 @@ coid,company,officerName,officerID
 410693872,Minnesota Masonic Charities,Eric J. Neetenbeek,11393
 410693894,Breck School,Edward Kim*,111829
 410948382,Planned Parenthood  MN/ND/SD,Sarah Stoesz,7015
-410769851,Twin Cities Public Television Inc.,James Pagliarini,6101
+410769851,Twin Cities Public Television,James Pagliarini,6101
 363241033,American Refugee Committee,Daniel Wordsworth,11690
 411801370,Minnesota Diversified Industries Inc.,Peter McDErmott,111825
 363311936,Stevens Community Medical Center,Jason Breuer,111844
@@ -96,6 +99,3 @@ coid,company,officerName,officerID
 410706151,North Central University,Gordon Anderson,10631
 410693856,Dunwoody College of Technology,Rich Wagner,11689
 410828779,Avivo (formerly RESOURCE Inc.),Kelly Matter,11845
-371441658,Matter,Quenton Marty,11957
-411616861,Community Reinvestment Fund  Inc.,Frank Altman,11790
-410693875,Minnesota Orchestral Association,Kevin Smith,12071

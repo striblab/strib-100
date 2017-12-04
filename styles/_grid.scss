@@ -24,29 +24,31 @@ $grid-padding: 0.5rem !default;
     float: left;
   }
 
-  // 0 - 100 by 5
+  // Default classes
   @for $i from 0 through 20 {
     .col-#{($i * 5)} {
       width: ($i * 5) * 1%;
     }
+  }
 
-    @each $name, $size in $breakpoints {
-      @media (max-width: #{$size}) {
+  @for $i from 1 through 2 {
+    .col-#{($i * 33)} {
+      width: ($i * 33.33332) * 1%;
+    }
+  }
+
+  // Mobile first classes
+  @each $name, $size in $breakpoints {
+    @for $i from 0 through 20 {
+      @media only screen and (min-width: #{$size}) {
         .col-#{$name}-#{($i * 5)} {
           width: ($i * 5) * 1%;
         }
       }
     }
-  }
 
-  // 33 and 66
-  @for $i from 1 through 2 {
-    .col-#{($i * 33)} {
-      width: ($i * 33.33332) * 1%;
-    }
-
-    @each $name, $size in $breakpoints {
-      @media (max-width: #{$size}) {
+    @for $i from 1 through 2 {
+      @media only screen and (min-width: #{$size}) {
         .col-#{$name}-#{($i * 33)} {
           width: ($i * 33.33332) * 1%;
         }
