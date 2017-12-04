@@ -45,8 +45,8 @@
   .ceo-headshot,
   .logo {
     text-align: center;
-      display:inline-block;
-vertical-align:middle;
+    display:inline-block;
+    vertical-align:middle;
 
     img {
       max-height: 8em;
@@ -54,6 +54,11 @@ vertical-align:middle;
   }
       
      
+    .ceo-desktop {float:right;padding-right:0;}
+      
+      
+    .nudge-right {margin-right:2%;}  
+      
       
 }
 
@@ -61,18 +66,29 @@ vertical-align:middle;
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
     
+ .company {
+     
+    .rank {margin-left:25%;margin-right:25%;}
+     
+    .company-heading {
+    padding-bottom: 0em;
+    border-bottom: none;
+    margin-bottom: 0em;
+    }
     
+    .ceo-desktop {float:none;}
+    
+    .ceo-headshot, .logo {display:none}
     
     .company {width:100%;}    
     
+    .nudge-right {margin-right:0%;}
+     
+     
+     
     
-    .col .col-18 {width:100%;}
-    
-    .nudge-right {margin-right:0;}
-    
-    
-    
-    
+    }
+
     
     
     

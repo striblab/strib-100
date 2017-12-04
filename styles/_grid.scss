@@ -25,18 +25,22 @@ $grid-padding: 0.5rem !default;
   }
 
   // Custom ??
-  .col-12 {
+  .col-md-12 {
     width: 12%;
   }
 
-  .col-18 {
+  .col-md-18 {
     width: 18%;
   }
+    
+ .col-100 {float:none} 
+    
+    
 
   // Default classes
-  @for $i from 0 through 20 {
-    .col-#{($i * 5)} {
-      width: ($i * 5) * 1%;
+  @for $i from 0 through 75 {
+    .col-#{($i * 3)} {
+      width: ($i * 3) * 1%;
     }
   }
 
