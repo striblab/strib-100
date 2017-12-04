@@ -33,8 +33,12 @@ $grid-padding: 0.5rem !default;
     width: 18%;
   }
     
- .col-100 {float:none} 
+   .col-md-24 {
+    width: 24%;
+  } 
     
+// .col-100 {float:none} 
+//    
     
 
   // Default classes
