@@ -104,7 +104,7 @@ export default {
     // Allow data to set all propeties, since we can't set
     // all from the markup of a component
     this.observe('data', d => {
-      console.log(d);
+      //console.log(d);
       if (_.isPlainObject(d)) {
         this.set(d);
         this.set({ intialized: true });

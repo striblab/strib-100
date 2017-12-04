@@ -13,11 +13,25 @@
             <button type="button" class="category {{ f.id }} {{ filter === f.id ? 'active' : '' }}" on:click="set({ filter: f.id })">{{ f.name }}</button>
           {{/each}}
         </fieldset>
+
+        <div class="ceo-sort">
+          {{#if (!ceoSort)}}
+            <button on:click="set({ ceoSort: true })" type="button" class="sort-ceo">Sort by CEO compensation</button>
+          {{else}}
+            <button on:click="set({ ceoSort: false })" type="button" class="unsort-ceo">Sort by revenue rankings</button>
+          {{/if}}
+        </div>
       </form>
     </div>
 
-    <div class="company-list">
-      {{#each companies as company, ci }}
+    <div class="company-list {{ !ceoSort ? 'company-list-show' : 'company-list-noshow' }}">
+      {{#each companies as company @coid }}
+        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" />
+      {{/each}}
+    </div>
+
+    <div class="company-list complany-list-ceo {{ !ceoSort ? 'company-list-noshow' : 'company-list-show' }}">
+      {{#each companiesCeo as company @coid }}
         <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" />
       {{/each}}
     </div>
@@ -45,6 +59,24 @@ export default {
         { id: 'other', name: 'Other' }
       ]
     };
+  },
+
+  methods: {
+    sortByOfficerCompensation() {
+      this.set({ companies: [] });
+      this.set({
+        companies: _.sortBy(this.get('originalCompanies'), a => {
+          return a.officer && a.officer.total ? a.officer.total : 0;
+        }).reverse()
+      });
+    },
+    sortByRank() {
+      this.set({
+        companies: _.sortBy(this.get('originalCompanies'), a => {
+          return a.rank ? a.rank : 0;
+        })
+      });
+    }
   }
 };
 </script>

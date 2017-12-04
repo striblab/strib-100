@@ -3,7 +3,7 @@
  */
 
 // Define globals that are added through the config.json file, here like this:
-// /* global _ */
+/* global _ */
 'use strict';
 
 // Dependencies
@@ -21,7 +21,16 @@ let u = utilsFn({});
 const page = new Page({
   target: document.querySelector('#np-app-container'),
   data: {
-    companies: companies,
+    originalCompanies: companies,
+    companies: _.cloneDeep(companies),
+    // There is a serious issue (in FF) where using an actual .sort is
+    // super slow.  Tried to debug, and the likely culprit is another
+    // script on the page via the CMS, maybe some sort of general
+    // dom watching that slow it down so much.  This is a hack to simply
+    // show one list and hide the other.
+    companiesCeo: _.sortBy(_.cloneDeep(companies), c => {
+      return c.officer && c.officer.total ? c.officer.total : 0;
+    }).reverse(),
     loading: false,
     utils: u
   }
