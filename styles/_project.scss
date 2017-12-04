@@ -8,6 +8,12 @@
   text-align: center;
 }
 
+dl {
+font-size:.9em;
+padding: 0.2em 0em 0.25em 0.4em;
+margin:0;
+}
+
 dd {
   display: inline;
 
@@ -22,13 +28,28 @@ dt {
   display: inline-block;
 }
 
+
+
+
+.gray-stripe {background-color: #efefef;}
+
+.company .ceo-headshot {background-color: #aaaaaa;}
+
+.nudge-left {margin-left:2%;}
+
+.nudge-right {margin-right:2%;}
+
+
+
+
+
 // Category colors
 $color-categories: (
-  social-services: #FFB3EC,
-  healthcare: #B3ECFF,
-  arts: #FFECB3,
-  education: #C6FFB3,
-  other: #C6B3FF
+  social-services: #fbdbaa,
+  healthcare: #c7ddf3,
+  arts: #f3bfc7,
+  education: #d3e5c0,
+  other: #dbd3e4
 );
 
 @each $id, $color in $color-categories {
@@ -40,3 +61,4 @@ $color-categories: (
     color: darken($color, 50);
   }
 }
+

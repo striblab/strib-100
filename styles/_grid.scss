@@ -24,6 +24,9 @@ $grid-padding: 0.5rem !default;
     float: left;
   }
 
+  .col-12 {width:12%;}
+  .col-18 {width:18%;}
+
   // 0 - 100 by 5
   @for $i from 0 through 20 {
     .col-#{($i * 5)} {

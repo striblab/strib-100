@@ -2,33 +2,101 @@
  * Company specific styles
  */
 
-.company {
-  margin-bottom: 2em;
+  .company {
+	padding-bottom: 2.5em;
+	border-bottom: 2px solid #e8e8e8;
+	margin-bottom: 2.5em;
 
   &.no-show {
     display: none;
   }
 
+    
+      
+      
   .company-heading {
     padding-bottom: 1em;
     border-bottom: 1px solid map-get($grays, 'lighter');
     margin-bottom: 1em;
+        h3 {
+            padding-top:0;
+        } 
+        p {
+            font-family: "Benton Sans", sans-serif;
+        }
   }
 
+  span.category {font-family: "Benton Sans", sans-serif;}
+    
   .rank {
+    font-family: "Popular Light", sans-serif;
+    font-style: normal;
+    font-weight: normal;  
     font-size: 4em;
     text-align: center;
     margin: 0;
-    padding: 0.25em 0.5em;
+    padding: 0.25em 0.25em;
     border-radius: 0.1em;
   }
-
+     
+  .popHed {font-family: "Popular Light",sans-serif;color:#444;}
+    
+  
   .ceo-headshot,
   .logo {
     text-align: center;
+      display:inline-block;
+vertical-align:middle;
 
     img {
       max-height: 8em;
     }
   }
+      
+     
+      
 }
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    
+    
+    
+    .company {width:100%;}    
+    
+    
+    .col .col-18 {width:100%;}
+    
+    .nudge-right {margin-right:0;}
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

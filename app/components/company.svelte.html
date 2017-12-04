@@ -1,36 +1,44 @@
-<div class="company {{ (filter && filter !== category) ? 'no-show' : '' }}">
+<div class="company {{ (filter && filter !== category) ? 'no-show' : '' }}" data-id="{{ coid }}">
   {{#if intialized}}
     <div class="company-heading row">
-      <div class="col col-25">
+      <div class="col col-18 nudge-right">
         <p class="rank category {{ category }}">
           <span class="sr-only">The overall ranking of this company is</span>
-          <span>{{ rank }}</span>
+          <span class="popHed">{{ rank }}</span>
         </p>
       </div>
 
       <div class="col col-75">
         <h3>{{ company }}</h3>
         <p>
-          <span class="category {{ category }}-fg">{{ categoryName }}</span><br>
+         
 
           {{ shortDesc || description }}
-          {{#if www}}
-            <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">{{ www.replace(/(^https?:\/\/(www.)?)|^www./i, '').replace(/\/$/, '') }}</a>
-          {{/if}}
+
         <p>
       </div>
     </div>
 
     <div class="company-details row">
-      <div class="col col-20">
-        <dl>
-          <dt>Ranking last year:</dt><dd>TODO</dd>
-          <dt>City:</dt><dd>{{ city }}</dd>
-          <dt>Sector:</dt><dd>TODO</dd>
+      <div class="col col-18 nudge-right">
+        <dl class="gray-stripe"> 
+          <dt>2016 ranking:</dt><dd>TODO</dd>
         </dl>
+        <dl>  
+          <dt>City:</dt><dd>{{ city }}</dd>
+        </dl>
+        <dl class="gray-stripe">  
+          <dt>Sector:</dt><dd> <span class="category">{{ categoryName }}</span></dd>
+        </dl>
+                  {{#if www}}
+           <dl> 
+          <dt> <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">Website</a>
+          </dt>
+          </dl>
+          {{/if}}
       </div>
 
-      <div class="col col-20">
+      <div class="col col-12">
         <div class="logo">
           {{#if hasLogo}}
             <img src="{{ utils.getDirectoryJS() }}/assets/logos/{{ coid }}.png" alt="Company logo for {{ company }}">
@@ -38,41 +46,54 @@
         </div>
       </div>
 
-      <div class="col col-20">
+      <div class="col col-25">
         {{#if finances}}
           <h4 class="sr-only">Company financial details</h4>
 
-          <dl>
+          <dl class="gray-stripe">
             <dt>Revenue:</dt><dd>${{ currency(finances.revenue) }}</dd>
+          </dl>
+          <dl> 
             <dt>1-year % change:</dt><dd>{{ prevFinances && prevFinances.revenue ? Math.round((finances.revenue - prevFinances.revenue) / prevFinances.revenue) + '%' : '-' }}</dd>
+          </dl>
+          <dl class="gray-stripe">  
             <dt>Revenue-exp ratio:</dt><dd>{{ Math.round(finances.revenue / finances.expenses * 100) / 100 }}</dd>
+          </dl>
+          <dl>   
             <dt>Excess:</dt><dd>${{ currency(finances.excess) }}</dd>
           </dl>
         {{/if}}
       </div>
 
-      <div class="col col-20">
+      <div class="col col-30" style="float:right;padding-right:0;">
+        {{#if officer}}
+          <h4 class="sr-only">Leadership details</h4>
+
+          <dl class="gray-stripe">
+            <dt>CEO:</dt><dd>{{ officer.first + ' ' + officer.last }}</dd>
+          </dl>
+          <dl>  
+            <dt>Compensation:</dt><dd>${{ currency(officer.total) }}</dd>
+          </dl>
+          <dl class="gray-stripe">   
+            <dt>1-year % change:</dt><dd>-</dd>
+          </dl>
+          <dl>    
+            <dt>Comp. as % of expenses:</dt><dd>{{ Math.round(officer.total / finances.revenue * 100 * 10000) / 10000 }}%</dd>
+          </dl>
+        {{/if}}
+      </div>
+      
+      <div class="col col-12" style="float:right;">
         <div class="ceo-headshot" data-officer-id="{{ officer.officerId }}">
           {{#if officer && officer.hasImage}}
             <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officer.officerId }}.png" alt="Headshot for {{ officer.first + ' ' + officer.last }}">
           {{else}}
-            <img src="./assets/images/generic-headshot.jpg" alt="Generic headshot image">
+            <img src="{{ utils.getDirectoryJS() }}/assets/images/generic-headshot.jpg" alt="Generic headshot image">
           {{/if}}
         </div>
       </div>
-
-      <div class="col col-20">
-        {{#if officer}}
-          <h4 class="sr-only">Leadership details</h4>
-
-          <dl>
-            <dt>CEO:</dt><dd>{{ officer.first + ' ' + officer.last }}</dd>
-            <dt>Compensation:</dt><dd>${{ currency(officer.total) }}</dd>
-            <dt>1-year % change:</dt><dd>-</dd>
-            <dt>Compensation as % of expenses:</dt><dd>{{ Math.round(officer.total / finances.revenue * 100 * 10000) / 10000 }}%</dd>
-          </dl>
-        {{/if}}
-      </div>
+      
     </div>
   {{/if}}
 </div>
