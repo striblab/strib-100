@@ -2,6 +2,12 @@
  * Styles that apply to all components
  */
 
+.category-filter {float:left;width:100%;}
+.category-filter fieldset {float:left;width:70%;}
+.ceo-sort {float:right;width:30%;text-align:right;}
+
+
+
 .loading {
   font-size: 1.5em;
   padding: 1em;
@@ -27,8 +33,6 @@ dt {
   padding-right: 0.5em;
   display: inline-block;
 }
-
-
 
 
 .gray-stripe {background-color: #efefef;}
