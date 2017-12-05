@@ -2,7 +2,7 @@
  * Simple, responsive grid
  */
 
-$grid-padding: 0.5rem !default;
+$grid-padding: 0.75rem !default;
 
 .row {
   margin-left: -1 * $grid-padding;
@@ -24,25 +24,14 @@ $grid-padding: 0.5rem !default;
     float: left;
   }
 
-  // Custom ??
-  .col-md-12 {
-    width: 12%;
-  }
-
-  .col-md-18 {
-    width: 18%;
-  }
-    
-   .col-md-24 {
-    width: 24%;
-  } 
-    
-// .col-100 {float:none} 
-//    
     
 
   // Default classes
-  @for $i from 0 through 75 {
+    .col-100 {
+      width: 100%;
+    }
+    
+  @for $i from 0 through 33 {
     .col-#{($i * 3)} {
       width: ($i * 3) * 1%;
     }
@@ -56,10 +45,10 @@ $grid-padding: 0.5rem !default;
 
   // Mobile first classes
   @each $name, $size in $breakpoints {
-    @for $i from 0 through 20 {
+    @for $i from 0 through 33 {
       @media only screen and (min-width: #{$size}) {
-        .col-#{$name}-#{($i * 5)} {
-          width: ($i * 5) * 1%;
+        .col-#{$name}-#{($i * 3)} {
+          width: ($i * 3) * 1%;
         }
       }
     }
@@ -70,6 +59,10 @@ $grid-padding: 0.5rem !default;
           width: ($i * 33.33332) * 1%;
         }
       }
+    }
+
+    .col-#{$name}-100 {
+        width: 100%;
     }
   }
 }

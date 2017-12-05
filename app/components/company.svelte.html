@@ -1,14 +1,14 @@
 <div class="company {{ (filter && filter !== category) ? 'no-show' : '' }}" data-id="{{ coid }}">
   {{#if intialized}}
     <div class="company-heading row">
-      <div class="col col-md-18 nudge-right">
+      <div class="col col-100 col-md-18 nudge-right">
         <p class="rank category {{ category }}">
           <span class="sr-only">The overall ranking of this company is</span>
           <span class="popHed">{{ rank }}</span>
         </p>
       </div>
 
-      <div class="col col-md-75">
+      <div class="col col-100 col-md-75">
         <h3>{{ company }}</h3>
         <p>
          
@@ -89,7 +89,7 @@
           {{#if officer && officer.hasImage}}
             <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officer.officerId }}.png" alt="Headshot for {{ officer.first + ' ' + officer.last }}">
           {{else}}
-            <img src="{{ utils.getDirectoryJS() }}/assets/images/generic-headshot.jpg" alt="Generic headshot image">
+            <img src="{{ utils.getDirectoryJS() }}/assets/images/generic-headshot.png" alt="Generic headshot image">
           {{/if}}
         </div>
       </div>
