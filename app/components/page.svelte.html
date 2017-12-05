@@ -26,13 +26,13 @@
 
     <div class="company-list {{ !ceoSort ? 'company-list-show' : 'company-list-noshow' }}">
       {{#each companies as company @coid }}
-        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" />
+        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" publishYear="{{ publishYear }}" />
       {{/each}}
     </div>
 
     <div class="company-list complany-list-ceo {{ !ceoSort ? 'company-list-noshow' : 'company-list-show' }}">
       {{#each companiesCeo as company @coid }}
-        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" />
+        <Company data="{{ company }}" filter="{{ filter }}" categories="{{ categories }}" utils="{{ utils }}" publishYear="{{ publishYear }}" />
       {{/each}}
     </div>
   {{/if}}

@@ -13,9 +13,13 @@ import Page from './components/page.svelte.html';
 // the CMS has not been figured yet (or at least in a
 // sustainable way)
 import companies from '../assets/non-profit-100.json';
+console.log(companies);
 
 // Setup utils function
 let u = utilsFn({});
+
+// OUr current year
+let publishYear = 2017;
 
 // Set up page
 const page = new Page({
@@ -29,9 +33,12 @@ const page = new Page({
     // dom watching that slow it down so much.  This is a hack to simply
     // show one list and hide the other.
     companiesCeo: _.sortBy(_.cloneDeep(companies), c => {
-      return c.officer && c.officer.total ? c.officer.total : 0;
+      return c.officers && c.officers[publishYear]
+        ? c.officers[publishYear].total
+        : 0;
     }).reverse(),
     loading: false,
+    publishYear: publishYear,
     utils: u
   }
 });

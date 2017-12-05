@@ -10,28 +10,23 @@
 
       <div class="col col-75">
         <h3>{{ company }}</h3>
-        <p>
-         
-
-          {{ shortDesc || description }}
-
-        <p>
+        <p>{{ shortDesc }}</p>
       </div>
     </div>
 
     <div class="company-details row">
       <div class="col col-18 nudge-right">
-        <dl class="gray-stripe"> 
-          <dt>2016 ranking:</dt><dd>TODO</dd>
+        <dl class="gray-stripe">
+          <dt>2016 ranking:</dt><dd>{{ previousRank }}</dd>
         </dl>
-        <dl>  
+        <dl>
           <dt>City:</dt><dd>{{ city }}</dd>
         </dl>
-        <dl class="gray-stripe">  
+        <dl class="gray-stripe">
           <dt>Sector:</dt><dd> <span class="category">{{ categoryName }}</span></dd>
         </dl>
                   {{#if www}}
-           <dl> 
+           <dl>
           <dt> <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">Website</a>
           </dt>
           </dl>
@@ -51,49 +46,49 @@
           <h4 class="sr-only">Company financial details</h4>
 
           <dl class="gray-stripe">
-            <dt>Revenue:</dt><dd>${{ currency(finances.revenue) }}</dd>
+            <dt>Revenue:</dt><dd>${{ currency(getValue(finances, 'revenue', publishYear)) }}</dd>
           </dl>
-          <dl> 
-            <dt>1-year % change:</dt><dd>{{ prevFinances && prevFinances.revenue ? Math.round((finances.revenue - prevFinances.revenue) / prevFinances.revenue) + '%' : '-' }}</dd>
+          <dl>
+            <dt>1-year % change:</dt><dd>{{ getChange(finances, 'revenue', publishYear) }}</dd>
           </dl>
-          <dl class="gray-stripe">  
-            <dt>Revenue-exp ratio:</dt><dd>{{ Math.round(finances.revenue / finances.expenses * 100) / 100 }}</dd>
+          <dl class="gray-stripe">
+            <dt>Revenue-exp ratio:</dt><dd>{{ round(getValue(finances, 'revenue', publishYear) / getValue(finances, 'expenses', publishYear)) }}</dd>
           </dl>
-          <dl>   
-            <dt>Excess:</dt><dd>${{ currency(finances.excess) }}</dd>
+          <dl>
+            <dt>Excess:</dt><dd>${{ currency(getValue(finances, 'excess', publishYear)) }}</dd>
           </dl>
         {{/if}}
       </div>
 
       <div class="col col-30" style="float:right;padding-right:0;">
-        {{#if officer}}
+        {{#if officers[publishYear]}}
           <h4 class="sr-only">Leadership details</h4>
 
           <dl class="gray-stripe">
-            <dt>CEO:</dt><dd>{{ officer.first + ' ' + officer.last }}</dd>
+            <dt>CEO:</dt><dd>{{ officerName }}</dd>
           </dl>
-          <dl>  
-            <dt>Compensation:</dt><dd>${{ currency(officer.total) }}</dd>
+          <dl>
+            <dt>Compensation:</dt><dd>${{ currency(getValue(officers, 'total', publishYear)) }}</dd>
           </dl>
-          <dl class="gray-stripe">   
-            <dt>1-year % change:</dt><dd>-</dd>
+          <dl class="gray-stripe">
+            <dt>1-year % change:</dt><dd>{{ getChange(officers, 'total', publishYear) }}</dd>
           </dl>
-          <dl>    
-            <dt>Comp. as % of expenses:</dt><dd>{{ Math.round(officer.total / finances.revenue * 100 * 10000) / 10000 }}%</dd>
+          <dl>
+            <dt>Comp. as % of expenses:</dt><dd>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'revenue', publishYear), 3) }}%</dd>
           </dl>
         {{/if}}
       </div>
-      
+
       <div class="col col-12" style="float:right;">
-        <div class="ceo-headshot" data-officer-id="{{ officer.officerId }}">
-          {{#if officer && officer.hasImage}}
-            <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officer.officerId }}.png" alt="Headshot for {{ officer.first + ' ' + officer.last }}">
+        <div class="ceo-headshot" data-officer-id="{{ officers[publishYear] ? officers[publishYear].officerId : 'no-officer' }}">
+          {{#if officers[publishYear] && officers[publishYear].hasImage}}
+            <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officers[publishYear].officerId }}.png" alt="Headshot for {{ officerName }}">
           {{else}}
             <img src="{{ utils.getDirectoryJS() }}/assets/images/generic-headshot.jpg" alt="Generic headshot image">
           {{/if}}
         </div>
       </div>
-      
+
     </div>
   {{/if}}
 </div>
@@ -113,13 +108,62 @@ export default {
   },
 
   helpers: {
-    currency: new Intl.NumberFormat({ currency: 'USD' }).format
+    currency: new Intl.NumberFormat({ currency: 'USD' }).format,
+
+    getValue: function(set, name, year) {
+      return _.isObject(set) && _.isObject(set[year]) && set[year][name]
+        ? set[year][name]
+        : '';
+    },
+
+    getChange: function(set, name, publishYear, decimals = 2) {
+      let round = value => {
+        return (
+          Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
+        );
+      };
+      let c =
+        _.isObject(set) &&
+        _.isObject(set[publishYear]) &&
+        set[publishYear][name]
+          ? set[publishYear][name]
+          : undefined;
+      let p =
+        _.isObject(set) &&
+        _.isObject(set[publishYear - 1]) &&
+        set[publishYear - 1][name]
+          ? set[publishYear - 1][name]
+          : undefined;
+      if (_.isNumber(c) && _.isNumber(p)) {
+        return round((c - p) / p * 100, decimals) + '%';
+      }
+      else {
+        return '-';
+      }
+    },
+
+    round: function(value, decimals = 2) {
+      return _.isNumber(value)
+        ? Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
+        : value;
+    }
   },
 
   computed: {
     categoryName: (categories, category) => {
       return category && _.find(categories, { id: category })
         ? _.find(categories, { id: category }).name
+        : '';
+    },
+
+    officerName: (officers, publishYear) => {
+      return _.isObject(officers) && _.isObject(officers[publishYear])
+        ? officers[publishYear].first +
+          ' ' +
+          officers[publishYear].last +
+          (officers[publishYear].suffix
+            ? ', ' + officers[publishYear].suffix
+            : '')
         : '';
     }
   }
