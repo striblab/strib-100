@@ -1,21 +1,21 @@
 <div class="company {{ (filter && filter !== category) ? 'no-show' : '' }}" data-id="{{ coid }}">
   {{#if intialized}}
     <div class="company-heading row">
-      <div class="col col-18 nudge-right">
+      <div class="col col-100 col-md-18 nudge-right">
         <p class="rank category {{ category }}">
           <span class="sr-only">The overall ranking of this company is</span>
           <span class="popHed">{{ rank }}</span>
         </p>
       </div>
 
-      <div class="col col-75">
+      <div class="col col-100 col-md-75">
         <h3>{{ company }}</h3>
         <p>{{ shortDesc }}</p>
       </div>
     </div>
 
     <div class="company-details row">
-      <div class="col col-18 nudge-right">
+      <div class="col col-md-18 nudge-right">
         <dl class="gray-stripe">
           <dt>2016 ranking:</dt><dd>{{ previousRank }}</dd>
         </dl>
@@ -33,7 +33,7 @@
           {{/if}}
       </div>
 
-      <div class="col col-12">
+      <div class="col col-md-12">
         <div class="logo">
           {{#if hasLogo}}
             <img src="{{ utils.getDirectoryJS() }}/assets/logos/{{ coid }}.png" alt="Company logo for {{ company }}">
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="col col-25">
+      <div class="col col-md-24">
         {{#if finances}}
           <h4 class="sr-only">Company financial details</h4>
 
@@ -60,7 +60,7 @@
         {{/if}}
       </div>
 
-      <div class="col col-30" style="float:right;padding-right:0;">
+      <div class="col col-md-30 ceo-desktop">
         {{#if officers[publishYear]}}
           <h4 class="sr-only">Leadership details</h4>
 
@@ -79,7 +79,7 @@
         {{/if}}
       </div>
 
-      <div class="col col-12" style="float:right;">
+      <div class="col col-md-12" style="float:right;">
         <div class="ceo-headshot" data-officer-id="{{ officers[publishYear] ? officers[publishYear].officerId : 'no-officer' }}">
           {{#if officers[publishYear] && officers[publishYear].hasImage}}
             <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officers[publishYear].officerId }}.png" alt="Headshot for {{ officerName }}">
