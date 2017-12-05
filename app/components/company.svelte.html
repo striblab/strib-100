@@ -1,14 +1,14 @@
 <div class="company {{ (filter && filter !== category) ? 'no-show' : '' }}" data-id="{{ coid }}">
   {{#if intialized}}
     <div class="company-heading row">
-      <div class="col col-100 col-md-18 nudge-right">
+      <div class="col col-100 col-md-21">
         <p class="rank category {{ category }}">
           <span class="sr-only">The overall ranking of this company is</span>
           <span class="popHed">{{ rank }}</span>
         </p>
       </div>
 
-      <div class="col col-100 col-md-75">
+      <div class="col col-100 col-md-66">
         <h3>{{ company }}</h3>
         <p>
          
@@ -20,7 +20,7 @@
     </div>
 
     <div class="company-details row">
-      <div class="col col-md-18 nudge-right">
+      <div class="col col-100 col-md-21">
         <dl class="gray-stripe"> 
           <dt>2016 ranking:</dt><dd>TODO</dd>
         </dl>
@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <div class="col col-md-24">
+      <div class="col col-100 col-md-24">
         {{#if finances}}
           <h4 class="sr-only">Company financial details</h4>
 
@@ -65,7 +65,7 @@
         {{/if}}
       </div>
 
-      <div class="col col-md-30 ceo-desktop">
+      <div class="col col-100 col-md-30 ceo-desktop">
         {{#if officer}}
           <h4 class="sr-only">Leadership details</h4>
 
