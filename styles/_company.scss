@@ -121,4 +121,8 @@
       max-width: 100%;
     }
   }
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
