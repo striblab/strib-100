@@ -6,21 +6,26 @@
   {{#if companies}}
     <div class="category-filter">
       <form>
-        <fieldset>
-          <legend>Filter <span class="sr-only">company list</span></legend>
+        <div class="row">
+          <div class="col col-100 col-md-66">
+            <fieldset>
+              <legend>Filter <span class="sr-only">company list</span></legend>
 
-          {{#each categories as f}}
-            <button type="button" class="category {{ f.id }} {{ filter === f.id ? 'active' : '' }}" on:click="set({ filter: f.id })">{{ f.name }}</button>
-          {{/each}}
-        </fieldset>
+              {{#each categories as f}}
+                <button type="button" class="category {{ f.id }} {{ filter === f.id ? 'active' : '' }}" on:click="set({ filter: f.id })">{{ f.name }}</button>
+              {{/each}}
+            </fieldset>
+          </div>
 
-        <div class="ceo-sort">
-          {{#if (!ceoSort)}}
-            <button on:click="set({ ceoSort: true })" type="button" class="sort-ceo">Sort by CEO compensation</button>
-          {{else}}
-            <button on:click="set({ ceoSort: false })" type="button" class="unsort-ceo">Sort by revenue rankings</button>
-          {{/if}}
-        </div>
+          <div class="col col-100 col-md-33">
+            <div class="ceo-sort">
+              {{#if (!ceoSort)}}
+                <button on:click="set({ ceoSort: true })" type="button" class="sort-ceo">Sort by CEO compensation</button>
+              {{else}}
+                <button on:click="set({ ceoSort: false })" type="button" class="unsort-ceo">Sort by revenue rankings</button>
+              {{/if}}
+            </div>
+          </div>
       </form>
     </div>
 
