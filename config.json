@@ -19,7 +19,8 @@
     "globals": [
       "https://cdnjs.cloudflare.com/ajax/libs/pym/1.2.2/pym.v1.min.js",
       "https://cdn.polyfill.io/v2/polyfill.min.js",
-      "http://static.startribune.com/assets/libs/lodash/4.17.4/lodash.min.js"
+      "http://static.startribune.com/assets/libs/lodash/4.17.4/lodash.min.js",
+      "http://static.startribune.com/assets/libs/moment.js/2.19.1/moment.min.js"
     ]
   },
   "publish": {

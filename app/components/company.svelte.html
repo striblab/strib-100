@@ -1,41 +1,40 @@
 <div class="company {{ (filter && filter !== category) ? 'no-show' : '' }}" data-id="{{ coid }}">
   {{#if intialized}}
     <div class="company-heading row">
-      <div class="col col-100 col-md-21">
+      <div class="col col-25 col-md-20 grid-space">
         <p class="rank category {{ category }}">
           <span class="sr-only">The overall ranking of this company is</span>
           <span class="popHed">{{ rank }}</span>
         </p>
       </div>
 
-      <div class="col col-100 col-md-66">
+      <div class="col col-75 col-md-75 grid-space">
         <h3>{{ company }}</h3>
         <p>{{ shortDesc }}</p>
+
+        <div class="company-meta">
+          {{ city }} <span class="spacer"></span>
+
+          {{ categoryName }} <span class="spacer"></span>
+
+          2016 ranking: <strong>{{ previousRank ? previousRank : '-' }}</strong>
+          {{#if previousRank && rank > previousRank}}
+            <span class="decrease" title="A decrease in rank from last year."></span>
+          {{/if}}
+          {{#if previousRank && rank < previousRank}}
+            <span class="increase" title="An increase in rank from last year."></span>
+          {{/if}}
+
+          {{#if www}}
+            <span class="spacer"></span>
+            <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">{{ www.replace(/https?:\/\//, '').replace('www.', '') }}</a>
+          {{/if}}
+        </div>
       </div>
     </div>
 
     <div class="company-details row">
-      <div class="col col-100 col-md-21">
-        <dl class="gray-stripe">
-          <dt>2016 ranking:</dt><dd>{{ previousRank }}</dd>
-        </dl>
-        <dl>
-          <dt>City:</dt><dd>{{ city }}</dd>
-        </dl>
-        <dl class="gray-stripe">
-          <dt>Sector:</dt><dd> <span class="category">{{ categoryName }}</span></dd>
-        </dl>
-
-        {{#if www}}
-          <dl>
-            <dt>
-              <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">Website</a>
-            </dt>
-          </dl>
-        {{/if}}
-      </div>
-
-      <div class="col col-md-12">
+      <div class="col col-25 col-md-20 grid-space no-grid-space-md">
         <div class="logo">
           {{#if hasLogo}}
             <img src="{{ utils.getDirectoryJS() }}/assets/logos/{{ coid }}.png" alt="Company logo for {{ company }}">
@@ -43,45 +42,44 @@
         </div>
       </div>
 
-      <div class="col col-100 col-md-24">
+      <div class="col col-75 col-md-30 grid-space no-grid-space-md">
         {{#if finances}}
           <h4 class="sr-only">Company financial details</h4>
 
-          <dl class="gray-stripe">
-            <dt>Revenue:</dt><dd>${{ currency(getValue(finances, 'revenue', publishYear)) }}</dd>
-          </dl>
-          <dl>
-            <dt>1-year % change:</dt><dd>{{ getChange(finances, 'revenue', publishYear) }}</dd>
-          </dl>
-          <dl class="gray-stripe">
-            <dt>Revenue-exp ratio:</dt><dd>{{ round(getValue(finances, 'revenue', publishYear) / getValue(finances, 'expenses', publishYear)) }}</dd>
-          </dl>
-          <dl>
-            <dt>Excess:</dt><dd>${{ currency(getValue(finances, 'excess', publishYear)) }}</dd>
-          </dl>
+          <div class="financial-data revenue">
+            <span>${{ abbreviateNumber(getValue(finances, 'revenue', publishYear)) }}</span> in revenue
+          </div>
+
+          <div class="financial-data revenue-change">
+            <span>
+              {{ getChange(finances, 'revenue', publishYear) }}
+            </span>
+
+            {{#if getChange(finances, 'revenue', publishYear, 2, false) < 0}}
+              <span class="decrease" title="A decrease in revenue from last year."></span>
+            {{/if}}
+            {{#if getChange(finances, 'revenue', publishYear, 2, false) > 0}}
+              <span class="increase" title="An increase in revenue from last year."></span>
+            {{/if}}
+
+            change from 2016
+          </div>
+
+          <div class="financial-data revenue-ratio">
+            <span>{{ round(getValue(finances, 'revenue', publishYear) / getValue(finances, 'expenses', publishYear)) }}</span> ratio to expenses
+          </div>
+
+          <div class="financial-data excess">
+            <span>{{ getValue(finances, 'excess', publishYear) < 0 ? '-$' : '$' }}{{ abbreviateNumber(getValue(finances, 'excess', publishYear)).replace('-', '') }}</span> in excess
+          </div>
+
+          <div class="financial-data fiscal-year-end">
+            Data from fiscal year ending {{ formatDate(getValue(finances, 'fiscalYearEnd', publishYear), 'MMM DD, YYYY') }}.
+          </div>
         {{/if}}
       </div>
 
-      <div class="col col-100 col-md-30 ceo-desktop">
-        {{#if officers[publishYear]}}
-          <h4 class="sr-only">Leadership details</h4>
-
-          <dl class="gray-stripe">
-            <dt>CEO:</dt><dd>{{ officerName }}</dd>
-          </dl>
-          <dl>
-            <dt>Compensation:</dt><dd>${{ currency(getValue(officers, 'total', publishYear)) }}</dd>
-          </dl>
-          <dl class="gray-stripe">
-            <dt>1-year % change:</dt><dd>{{ getChange(officers, 'total', publishYear) }}</dd>
-          </dl>
-          <dl>
-            <dt>Comp. as % of expenses:</dt><dd>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'revenue', publishYear), 3) }}%</dd>
-          </dl>
-        {{/if}}
-      </div>
-
-      <div class="col col-md-12" style="float:right;">
+      <div class="col col-25 col-md-15">
         <div class="ceo-headshot" data-officer-id="{{ officers[publishYear] ? officers[publishYear].officerId : 'no-officer' }}">
           {{#if officers[publishYear] && officers[publishYear].hasImage}}
             <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officers[publishYear].officerId }}.png" alt="Headshot for {{ officerName }}">
@@ -91,6 +89,40 @@
         </div>
       </div>
 
+      <div class="col col-75 col-md-35">
+        {{#if officers[publishYear]}}
+          <h4 class="sr-only">Leadership details</h4>
+
+          <div class="leadership-data leader-name">
+            <span>{{ officerName }}</span><br>{{ officers[publishYear].title }}
+          </div>
+
+          <div class="leadership-data compensation">
+            <span>${{ abbreviateNumber(getValue(officers, 'total', publishYear)) }}</span> in compensation
+          </div>
+
+          <div class="leadership-data compensation-change">
+            <span>
+              {{ getChange(officers, 'total', publishYear) }}
+            </span>
+
+            {{#if getChange(officers, 'total', publishYear, 2, false) < 0}}
+              <span class="decrease" title="A decrease in compensation from last year."></span>
+            {{/if}}
+            {{#if getChange(officers, 'total', publishYear, 2, false) > 0}}
+              <span class="increase" title="An increase in compensation from last year."></span>
+            {{/if}}
+
+            change from 2016
+          </div>
+
+          <div class="leadership-data compensation-revenue-ratio">
+            <span>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'revenue', publishYear), 4) }}%</span> of revenue
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="col col-md-6">&nbsp;</div>
     </div>
   {{/if}}
 </div>
@@ -118,7 +150,14 @@ export default {
         : '';
     },
 
-    getChange: function(set, name, publishYear, decimals = 2) {
+    getChange: function(
+      set,
+      name,
+      publishYear,
+      decimals = 2,
+      formatted = true
+    ) {
+      formatted = formatted === 'false' ? false : !!formatted;
       let round = value => {
         return (
           Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
@@ -137,10 +176,12 @@ export default {
           ? set[publishYear - 1][name]
           : undefined;
       if (_.isNumber(c) && _.isNumber(p)) {
-        return round((c - p) / p * 100, decimals) + '%';
+        return formatted
+          ? round((c - p) / p * 100, decimals) + '%'
+          : (c - p) / p;
       }
       else {
-        return '-';
+        return formatted ? '-' : undefined;
       }
     },
 
@@ -148,6 +189,38 @@ export default {
       return _.isNumber(value)
         ? Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
         : value;
+    },
+
+    formatDate: function(date, format) {
+      //return window.moment(date).format(format);
+      return date && date.toLocaleString
+        ? date.toLocaleString().split('T')[0]
+        : '';
+    },
+
+    // https://stackoverflow.com/questions/10599933/convert-long-number-into-abbreviated-string-in-javascript-with-a-special-shortn
+    abbreviateNumber(input, decimals = 1) {
+      if (!_.isNumber(input)) {
+        return input ? input : '';
+      }
+
+      // Round function
+      let round = value => {
+        return (
+          Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
+        );
+      };
+
+      // Get power
+      let b = input.toPrecision(2).split('e');
+      // Floor at decimals, ceiling at trillions
+      let k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3);
+      // Divide by power
+      let c = k < 1 ? round(input) : round(input / Math.pow(10, k * 3));
+      // Ensure -0 is 0
+      c = c < 0 ? c : Math.abs(c);
+      // Append abbreviation
+      return c + ['', 'k', 'M', 'B', 'T'][k];
     }
   },
 

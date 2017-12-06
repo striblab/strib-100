@@ -3,7 +3,7 @@
  */
 
 .company {
-  padding-bottom: 1em;
+  padding-bottom: 2em;
   border-bottom: 2px solid #e8e8e8;
   margin-bottom: 2em;
 
@@ -19,7 +19,44 @@
     }
 
     p {
-      font-family: "Benton Sans", sans-serif;
+      font-family: map-get($font-sets, 'benton-sans');
+    }
+  }
+
+  .increase,
+  .decrease {
+    display: inline-block;
+    padding: 0 0.1em;
+  }
+
+  .increase {
+    color: map-get($theme, 'green-dark');
+
+    &::after {
+      content: '↑';
+    }
+  }
+
+  .decrease {
+    color: map-get($theme, 'red-dark');
+
+    &::after {
+      content: '↓';
+    }
+  }
+
+  .company-meta {
+    font-size: 0.85em;
+    padding-top: 1em;
+
+    .spacer {
+      display: inline-block;
+      padding: 0 1em;
+      color: map-get($grays, 'light');
+
+      &::after {
+        content: '|';
+      }
     }
   }
 
@@ -36,6 +73,36 @@
     margin: 0;
     padding: 0.25em;
     border-radius: 0.1em;
+
+    @media only screen and (max-width: map-get($breakpoints, 'sm')) {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+  }
+
+  .financial-data,
+  .leadership-data {
+    line-height: 1.5em;
+    font-size: 0.85em;
+
+    span {
+      font-size: 1.5em;
+    }
+
+    &.revenue span,
+    &.compensation span {
+      font-size: 1.75em;
+      font-weight: bold;
+    }
+
+    &.leader-name,
+    &.revenue {
+      margin-bottom: 1em;
+    }
+
+    &.fiscal-year-end {
+      color: map-get($grays, 'light');
+    }
   }
 
   .popHed {
@@ -45,65 +112,13 @@
 
   .ceo-headshot,
   .logo {
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+    text-align: right;
 
     img {
-      max-height: 8em;
-    }
-  }
-
-  .ceo-desktop {
-    float: right;
-  }
-
-  .ceo-desktop-mug {
-    float: right;
-  }
-
-  .ceo-headshot {
-    background-color: #aaaaaa;
-  }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-  .company {
-    padding-bottom: 0.5em;
-    border-bottom: 2px solid #e8e8e8;
-    margin-bottom: 1.5em;
-
-    .rank {
-      margin-left: 25%;
-      margin-right: 25%;
-    }
-
-    .company-heading {
-      padding-bottom: 0;
-      // border-bottom: none;
-      // margin-bottom: 0em;
-
-      p {
-        font-family: map-get($font-sets, 'benton-sans');
-        margin-bottom: 0;
-      }
-    }
-
-    .col-100 .ceo-desktop {
-      float: none;
-    }
-
-    .ceo-headshot,
-    .logo {
-      display: none;
-    }
-
-    .company {
-      width: 100%;
-    }
-
-    .nudge-right {
-      margin-right: 0%;
+      vertical-align: middle;
+      display: inline-block;
+      max-height: 6em;
+      max-width: 100%;
     }
   }
 }

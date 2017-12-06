@@ -24,15 +24,10 @@ $grid-padding: 0.75rem !default;
     float: left;
   }
 
-  // Default classes
-  .col-100 {
-    width: 100%;
-    margin-bottom: 1em;
-  }
-
-  @for $i from 0 through 33 {
-    .col-#{($i * 3)} {
-      width: ($i * 3) * 1%;
+  // Sorry, this is for all 100 percents :(
+  @for $i from 0 through 100 {
+    .col-#{($i)} {
+      width: $i * 1%;
     }
   }
 
@@ -44,10 +39,10 @@ $grid-padding: 0.75rem !default;
 
   // Mobile first classes
   @each $name, $size in $breakpoints {
-    @for $i from 0 through 33 {
+    @for $i from 0 through 100 {
       @media only screen and (min-width: #{$size}) {
-        .col-#{$name}-#{($i * 3)} {
-          width: ($i * 3) * 1%;
+        .col-#{$name}-#{$i} {
+          width: $i * 1%;
         }
       }
     }
@@ -59,9 +54,26 @@ $grid-padding: 0.75rem !default;
         }
       }
     }
+  }
 
-    .col-#{$name}-100 {
-      width: 100%;
+  // Bottom space
+  .grid-space {
+    margin-bottom: 1em;
+  }
+
+  @each $name, $size in $breakpoints {
+    @media only screen and (min-width: #{$size}) {
+      .grid-space-#{$name} {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  @each $name, $size in $breakpoints {
+    @media only screen and (min-width: #{$size}) {
+      .no-grid-space-#{$name} {
+        margin-bottom: 0;
+      }
     }
   }
 }
