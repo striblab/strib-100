@@ -49,11 +49,11 @@ dt {
 
 // Category colors
 $color-categories: (
-  social-services: #fbdbaa,
-  healthcare: #c7ddf3,
-  arts: #f3bfc7,
-  education: #d3e5c0,
-  other: #dbd3e4
+  social-services: #ebe3d3,
+  healthcare: #d5e1ec,
+  arts: #edd4d4,
+  education: #dbe3ce,
+  other: #d6d6e6
 );
 
 @each $id, $color in $color-categories {

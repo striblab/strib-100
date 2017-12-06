@@ -13,7 +13,6 @@ import Page from './components/page.svelte.html';
 // the CMS has not been figured yet (or at least in a
 // sustainable way)
 import companies from '../assets/non-profit-100.json';
-console.log(companies);
 
 // Setup utils function
 let u = utilsFn({});
