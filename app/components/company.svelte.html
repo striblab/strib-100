@@ -13,8 +13,6 @@
         <p>{{ shortDesc }}</p>
 
         <div class="company-meta">
-          {{ city }} <span class="spacer"></span>
-
           {{ categoryName }} <span class="spacer"></span>
 
           2016 ranking: <strong>{{ previousRank ? previousRank : '-' }}</strong>
@@ -23,7 +21,9 @@
           {{/if}}
           {{#if previousRank && rank < previousRank}}
             <span class="increase" title="An increase in rank from last year."></span>
-          {{/if}}
+          {{/if}} <span class="spacer"></span>
+
+          {{ city }}
 
           {{#if www}}
             <span class="spacer"></span>
