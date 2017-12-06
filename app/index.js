@@ -32,7 +32,9 @@ const page = new Page({
     // dom watching that slow it down so much.  This is a hack to simply
     // show one list and hide the other.
     companiesCeo: _.sortBy(_.cloneDeep(companies), c => {
-      return c.officers && c.officers[publishYear]
+      return c.officers &&
+      c.officers[publishYear] &&
+      c.officers[publishYear].total
         ? c.officers[publishYear].total
         : 0;
     }).reverse(),
