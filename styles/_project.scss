@@ -2,11 +2,21 @@
  * Styles that apply to all components
  */
 
-.category-filter {float:left;width:100%;}
-.category-filter fieldset {float:left;width:70%;}
-.ceo-sort {float:right;width:30%;text-align:right;}
+.category-filter {
+  float: left;
+  width: 100%;
+}
 
+.category-filter fieldset {
+  float: left;
+  width: 70%;
+}
 
+.ceo-sort {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
 
 .loading {
   font-size: 1.5em;
@@ -15,9 +25,9 @@
 }
 
 dl {
-font-size:.9em;
-padding: 0.2em 0em 0.25em 0.4em;
-margin:0;
+  font-size: 0.9em;
+  padding: 0.2em 0 0.25em 0.4em;
+  margin: 0;
 }
 
 dd {
@@ -34,18 +44,9 @@ dt {
   display: inline-block;
 }
 
-
-.gray-stripe {background-color: #efefef;}
-
-.company .ceo-headshot {background-color: #aaaaaa;}
-
-.nudge-left {margin-left:2%;}
-
-.nudge-right {margin-right:2%;}
-
-
-
-
+.gray-stripe {
+  background-color: #efefef;
+}
 
 // Category colors
 $color-categories: (
@@ -65,4 +66,3 @@ $color-categories: (
     color: darken($color, 50);
   }
 }
-

@@ -24,14 +24,12 @@ $grid-padding: 0.75rem !default;
     float: left;
   }
 
-    
-
   // Default classes
-    .col-100 {
-      width: 100%;
-      margin-bottom: 1em;  
-    }
-    
+  .col-100 {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
   @for $i from 0 through 33 {
     .col-#{($i * 3)} {
       width: ($i * 3) * 1%;

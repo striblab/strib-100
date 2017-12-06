@@ -2,118 +2,108 @@
  * Company specific styles
  */
 
-  .company {
-	padding-bottom: 1em;
-	border-bottom: 2px solid #e8e8e8;
-	margin-bottom: 2em;
+.company {
+  padding-bottom: 1em;
+  border-bottom: 2px solid #e8e8e8;
+  margin-bottom: 2em;
 
   &.no-show {
     display: none;
   }
 
-      
   .company-heading {
-    padding-bottom: .5em;
-        h3 {
-            padding-top:0;
-        } 
-        p {
-            font-family: "Benton Sans", sans-serif;
-        }
+    padding-bottom: 0.5em;
+
+    h3 {
+      padding-top: 0;
+    }
+
+    p {
+      font-family: "Benton Sans", sans-serif;
+    }
   }
 
-  span.category {font-family: "Benton Sans", sans-serif;}
-    
+  span.category {
+    font-family: map-get($font-sets, 'benton-sans');
+  }
+
   .rank {
-    font-family: "Popular Light", sans-serif;
+    font-family: map-get($font-sets, 'popular-light');
     font-style: normal;
-    font-weight: normal;  
+    font-weight: normal;
     font-size: 4em;
     text-align: center;
     margin: 0;
-    padding: 0.25em 0.25em;
+    padding: 0.25em;
     border-radius: 0.1em;
   }
-     
-  .popHed {font-family: "Popular Light",sans-serif;color:#444;}
-    
-  
+
+  .popHed {
+    font-family: map-get($font-sets, 'popular-light');
+    color: #444444;
+  }
+
   .ceo-headshot,
   .logo {
     text-align: center;
-    display:inline-block;
-    vertical-align:middle;
+    display: inline-block;
+    vertical-align: middle;
 
     img {
       max-height: 8em;
     }
   }
-      
-    .ceo-desktop {
-        float:right;
-      }
 
-    .ceo-desktop-mug {
-        float:right;
-    } 
-      
+  .ceo-desktop {
+    float: right;
+  }
+
+  .ceo-desktop-mug {
+    float: right;
+  }
+
+  .ceo-headshot {
+    background-color: #aaaaaa;
+  }
 }
-
-
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-    
- .company {
+  .company {
     padding-bottom: 0.5em;
-	border-bottom: 2px solid #e8e8e8;
-	margin-bottom: 1.5em; 
-     
-    .rank {margin-left:25%;margin-right:25%;}
-     
+    border-bottom: 2px solid #e8e8e8;
+    margin-bottom: 1.5em;
+
+    .rank {
+      margin-left: 25%;
+      margin-right: 25%;
+    }
+
     .company-heading {
-    padding-bottom: 0em;
-//    border-bottom: none;
-//    margin-bottom: 0em;
-        p {
-            font-family: "Benton Sans", sans-serif;
-            margin-bottom:0;
-        }    
-    }
-    
-    .col-100 .ceo-desktop {float:none;}
-     
-    .ceo-headshot, .logo {display:none}
-    
-    .company {width:100%;}    
-    
-    .nudge-right {margin-right:0%;}
-    
+      padding-bottom: 0;
+      // border-bottom: none;
+      // margin-bottom: 0em;
+
+      p {
+        font-family: map-get($font-sets, 'benton-sans');
+        margin-bottom: 0;
+      }
     }
 
-    
-    
-    
+    .col-100 .ceo-desktop {
+      float: none;
+    }
+
+    .ceo-headshot,
+    .logo {
+      display: none;
+    }
+
+    .company {
+      width: 100%;
+    }
+
+    .nudge-right {
+      margin-right: 0%;
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
