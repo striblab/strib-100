@@ -79,18 +79,18 @@
         {{/if}}
       </div>
 
-      <div class="col col-25 col-md-15">
-        <div class="ceo-headshot" data-officer-id="{{ officers[publishYear] ? officers[publishYear].officerId : 'no-officer' }}">
-          {{#if officers[publishYear] && officers[publishYear].hasImage}}
-            <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officers[publishYear].officerId }}.png" alt="Headshot for {{ officerName }}">
-          {{else}}
-            <img src="{{ utils.getDirectoryJS() }}/assets/images/generic-headshot.jpg" alt="Generic headshot image">
-          {{/if}}
+      {{#if officers[publishYear]}}
+        <div class="col col-25 col-md-15">
+          <div class="ceo-headshot" data-officer-id="{{ officers[publishYear] ? officers[publishYear].officerId : 'no-officer' }}">
+            {{#if officers[publishYear] && officers[publishYear].hasImage}}
+              <img src="{{ utils.getDirectoryJS() }}/assets/ceos/{{ officers[publishYear].officerId }}.png" alt="Headshot for {{ officerName }}">
+            {{else}}
+              <img src="{{ utils.getDirectoryJS() }}/assets/images/generic-headshot.jpg" alt="Generic headshot image">
+            {{/if}}
+          </div>
         </div>
-      </div>
 
-      <div class="col col-75 col-md-35">
-        {{#if officers[publishYear]}}
+        <div class="col col-75 col-md-35">
           <h4 class="sr-only">Leadership details</h4>
 
           <div class="leadership-data leader-name">
@@ -119,8 +119,8 @@
           <div class="leadership-data compensation-revenue-ratio">
             <span>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'revenue', publishYear), 4) }}%</span> of revenue
           </div>
-        {{/if}}
-      </div>
+        </div>
+      {{/if}}
 
       <div class="col col-md-6">&nbsp;</div>
     </div>

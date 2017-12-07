@@ -2,11 +2,11 @@ coid,company,officerName,officerID
 2526,Blue Cross and Blue Shield of Minnesota,Michael Guyette,11909
 416011702,Mayo Clinic,John Noseworthy,11646
 411242261,Medica,David Tilford,11203
+2553,HealthPartners Inc.,Mary Brainerd,63779
 363261413,Allina Health System,Penny Wheeler,12065
 410991680,Fairview Health Services,David Murphy,12066
 200360007,Essentia Health,David Herman,111827
 363573805,UCare,"James Eppel, Jr.",111832
-2553,HealthPartners Inc.,Mary Brainerd,63779
 410695596,CentraCare Health,Kenneth Holmen,111841
 421707837,Hennepin Healthcare System Inc.,Jon Pryor,12019
 410729979,North Memorial Health Care,Dr. J. Kevin Croston,11959
@@ -45,6 +45,7 @@ coid,company,officerName,officerID
 410698301,College of St. Scholastica,George Goodwin,10148
 410969244,College of St. Benedict,Mary Dana Hinton,111824
 271442271,"Accra Care, Inc",John Dahm,11895
+411842965,Lakewood Health System,Tim Rice,9639
 410695527,St. Mary's University of Minnesota,"Brother William Mann, FSC, D.Min.",111823
 410711610,University of Northwestern - St. Paul,Alan Cureton,63759
 411973442,Greater Twin Cities United Way,Sarah Caruso,11656
@@ -67,6 +68,7 @@ coid,company,officerName,officerID
 410713907,Minnesota Historical Society,D. Stephen Elliott,11892
 237243247,The Blake School,,
 410724029,Riverview Healthcare Association,Carrie Michalski,11907
+410743546,Community Memorial Hospital Association,,
 650639567,Senior Care Communities Inc.,Susan Landwehr Marshall,111846
 410693869,Innovative Blood Resources,Donald Berglund,11268
 411837022,Sholom Community Alliance,Barbara Klick,12069
@@ -94,8 +96,6 @@ coid,company,officerName,officerID
 412017278,Hennepin Theatre Trust,Mark Nerenhausen,111834
 411627391,Books for Africa Inc.,Patrick Plonski,12008
 411677920,Minneapolis Medical Research Foundation,Ajay Israni,111831
-411961427,"Northstar Education Finance, Inc.",Richard Nigon,12021
+411961427,Northstar Education Finance Inc.,Richard Nigon,12021
 410737221,Opportunity Partners Inc.,Armando Camacho,11961
 411823173,Minnesota Transitions Charter School,,
-416052144,Arrowhead Economic Opportunity Agency Inc.,Harlan Tardy,10622
-410943433,St. Paul Academy and Summit School,,
