@@ -180,11 +180,10 @@ class Util {
     if (!this.directoryJS) {
       let scripts = document.getElementsByTagName('script');
       let path = scripts[scripts.length - 1].src.split('?')[0];
-      this.directoryJS =
-        path
-          .split('/')
-          .slice(0, -1)
-          .join('/') + '/';
+      this.directoryJS = path
+        .split('/')
+        .slice(0, -1)
+        .join('/');
     }
 
     return this.directoryJS;
