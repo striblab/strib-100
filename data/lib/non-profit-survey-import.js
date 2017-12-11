@@ -238,7 +238,11 @@ async function main() {
         r['Net unrealized gains/losses on investments']
       ),
       EOYBalance: parseNumber(r['Net assets or fund balances at end of year']),
-      InputSource: 'Automatically imported from ' + listYear + ' survey.'
+      InputSource: 'Automatically imported from ' + listYear + ' survey.',
+      Footnotes:
+        r[
+          'Please provide any footnote or additional information regarding these financial numbers that you think is important for the Star Tribune to know.'
+        ]
     };
     if (financesLookup) {
       finances.ID = financesLookup.ID;
