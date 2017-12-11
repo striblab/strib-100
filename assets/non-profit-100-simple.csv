@@ -5,31 +5,31 @@ coid,company,officerName,officerID
 2553,HealthPartners Inc.,Mary Brainerd,63779
 363261413,Allina Health System,Penny Wheeler,12065
 410991680,Fairview Health Services,David Murphy,12066
-200360007,Essentia Health,David Herman,111827
-363573805,UCare,"James Eppel, Jr.",111832
-410695596,CentraCare Health,Kenneth Holmen,111841
+200360007,Essentia Health,David Herman,111823
+363573805,UCare,"James Eppel, Jr.",111824
+410695596,CentraCare Health,Kenneth Holmen,111825
 421707837,Hennepin Healthcare System Inc.,Jon Pryor,12019
 410729979,North Memorial Health Care,Dr. J. Kevin Croston,11959
-2533,Children's Minnesota,Robert Bonar Jr,111840
+2533,Children's Minnesota,Robert Bonar Jr,111826
 411843943,University of Minnesota Physicians,Barbara Daniels,11631
 410714079,St. Luke's Hospital of Duluth,John Strange,10461
-840865803,National Marrow Donor Program,Dr. Jeffrey Chell,10777
+840865803,National Marrow Donor Program,,
 410693970,University of St. Thomas,Julie Sullivan,10528
 411500288,Presbyterian Homes and Services,Daniel Lindh,10378
-411560657,HealthEast,Kathryn Correia,11894
+411560657,HealthEast,,
 411531892,Benedictine Health System,"Rocklon ""Rocky"" Chapin",11958
 363379150,Gillette Children's Specialty Healthcare,Barbara Joers,11946
 311667875,Ridgeview Medical Center,Robert Stevens,9785
 410694747,Carleton College,Steven Poskanzer,11691
 410855367,Olmsted Medical Center,Kathryn Lombardo,11966
-42296967,Scholarship America,Robert Ballard,111828
-410693979,St. Olaf College,David Anderson,11386
+42296967,Scholarship America,Robert Ballard,111827
+410693979,St. Olaf College,,
 410682405,Hazelden Betty Ford Foundation,Mark Mishek,11633
 363503764,American Public Media Group,Jon McTaggart,11733
 410711588,Ecumen,Kathryn Roberts,11306
 410693962,Macalester College,Brian Rosenberg,11068
 410695524,Gustavus Adolphus College,Rebecca Bergman,11920
-410693932,YMCA of the Greater Twin Cities,Glen Gunderson,111830
+410693932,YMCA of the Greater Twin Cities,Glen Gunderson,111828
 410708577,Bethel University,James Barnes,10067
 237417654,Second Harvest Heartland,Rob Zeaske,11572
 410872993,Lutheran Social Service of Minnesota,Jodi Harpstead,11193
@@ -37,20 +37,21 @@ coid,company,officerName,officerID
 410695509,St. Catherine University,"Andrea Lee, IHM",9610
 410694721,Augsburg University,Paul Pribbenow,11502
 410693977,Concordia College,William Craft,11783
-410713914,Winona Health Services,Rachelle Schultz,111839
+410713914,Winona Health Services,Rachelle Schultz,111829
 410730602,Lake Region Healthcare,Larry Schulz,10639
 410693953,Augustana Care,Timothy Tucker,10057
 2601,St. John's University,Michael Hemesath,11960
-410693960,Hamline University,Fayneese Miller,111833
+410693960,Hamline University,Fayneese Miller,111830
 410698301,College of St. Scholastica,George Goodwin,10148
-410969244,College of St. Benedict,Mary Dana Hinton,111824
+410969244,College of St. Benedict,Mary Dana Hinton,111831
 271442271,"Accra Care, Inc",John Dahm,11895
 411842965,Lakewood Health System,Tim Rice,9639
-410695527,St. Mary's University of Minnesota,"Brother William Mann, FSC, D.Min.",111823
+410695527,St. Mary's University of Minnesota,,
 410711610,University of Northwestern - St. Paul,Alan Cureton,63759
+841715908,Hutchinson Health,Steve Larson,111832
 411973442,Greater Twin Cities United Way,Sarah Caruso,11656
 411429149,Pheasants Forever Inc.,Howard Vincent,10732
-411865874,Grand Itasca Clinic and Hospital,Michael Youso,11696
+411865874,Grand Itasca Clinic and Hospital,,
 410736870,MRCI WorkSource,Brian Benshoof,11785
 410698597,Salvation Army - Northern Division,,
 410706131,Walker Methodist,Scott Riddle,11906
@@ -69,7 +70,7 @@ coid,company,officerName,officerID
 237243247,The Blake School,,
 410724029,Riverview Healthcare Association,Carrie Michalski,11907
 410743546,Community Memorial Hospital Association,Rick Breuer,63752
-650639567,Senior Care Communities Inc.,Susan Landwehr Marshall,111846
+650639567,Senior Care Communities Inc.,Susan Landwehr Marshall,111834
 410693869,Innovative Blood Resources,Donald Berglund,11268
 411837022,Sholom Community Alliance,Barbara Klick,12069
 410695603,St. Joseph's Area Health Services,Ben Koppelman,11577
@@ -86,16 +87,15 @@ coid,company,officerName,officerID
 410948382,Planned Parenthood  MN/ND/SD,Sarah Stoesz,7015
 410769851,Twin Cities Public Television,James Pagliarini,6101
 363241033,American Refugee Committee,Daniel Wordsworth,11690
-411801370,Minnesota Diversified Industries Inc.,Peter McDErmott,111825
-363311936,Stevens Community Medical Center,Jason Breuer,111844
+411801370,Minnesota Diversified Industries Inc.,Peter McDErmott,111835
+363311936,Stevens Community Medical Center,Jason Breuer,111836
 410972546,Community Involvement Programs Inc.,Rita Wiersma,12011
-410706172,Science Museum of Minnesota,Alison Brown,111842
+410706172,Science Museum of Minnesota,,
 410693889,Amherst H Wilder Foundation,MayKao Hang,11897
 410518750,Mitchell Hamline School of Law,Eric S. Janus,11634
 410693915,The Minneapolis Society of Fine Arts,Kaywin Feldman,11635
-412017278,Hennepin Theatre Trust,Mark Nerenhausen,111834
+412017278,Hennepin Theatre Trust,Mark Nerenhausen,111837
 411627391,Books for Africa Inc.,Patrick Plonski,12008
-411677920,Minneapolis Medical Research Foundation,Ajay Israni,111831
+411677920,Minneapolis Medical Research Foundation,Ajay Israni,111838
 411961427,Northstar Education Finance Inc.,Richard Nigon,12021
 410737221,Opportunity Partners Inc.,Armando Camacho,11961
-411823173,Minnesota Transitions Charter School,,
