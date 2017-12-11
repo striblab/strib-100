@@ -45,6 +45,42 @@
     }
   }
 
+  .show-notes {
+    display: inline-block;
+    font-size: 0.85em;
+    cursor: pointer;
+    color: map-get($theme, 'blue-dark');
+    transition: opacity, color 500ms;
+    text-decoration: underline;
+    opacity: 1;
+
+    &::after {
+      content: '+';
+    }
+
+    &:hover {
+      color: map-get($theme, 'green-dark');
+      text-decoration: none;
+    }
+
+    &.is-shown {
+      opacity: 0;
+    }
+  }
+
+  .notes {
+    padding-top: 1em;
+    font-size: 0.85em;
+    color: map-get($grays, medium);
+    max-height: 0;
+    transition: max-height 2s;
+    overflow-y: hidden;
+
+    &.is-shown {
+      max-height: 15em;
+    }
+  }
+
   .company-meta {
     font-size: 0.85em;
     padding-top: 1em;
@@ -73,6 +109,7 @@
     margin: 0;
     padding: 0.25em;
     border-radius: 0.1em;
+    color: #444444;
 
     @media only screen and (max-width: map-get($breakpoints, 'sm')) {
       font-size: 2.5em;
@@ -99,15 +136,6 @@
     &.revenue {
       margin-bottom: 1em;
     }
-
-    &.fiscal-year-end {
-      color: map-get($grays, 'light');
-    }
-  }
-
-  .popHed {
-    font-family: map-get($font-sets, 'popular-light');
-    color: #444444;
   }
 
   .ceo-headshot,

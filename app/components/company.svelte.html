@@ -4,13 +4,20 @@
       <div class="col col-25 col-md-20 grid-space">
         <p class="rank category {{ category }}">
           <span class="sr-only">The overall ranking of this company is</span>
-          <span class="popHed">{{ rank }}</span>
+          <span>{{ rank }}</span>
         </p>
       </div>
 
       <div class="col col-75 col-md-75 grid-space">
         <h3>{{ company }}</h3>
-        <p>{{ shortDesc }}</p>
+
+        <p>
+          {{ shortDesc }}&nbsp;
+          <span class="show-notes link {{ showNotes ? 'is-shown' : '' }}" on:click="set({ showNotes: true })">Notes</span>
+        </p>
+
+        <p class="notes {{ showNotes ? 'is-shown' : '' }}">Notes: {{ getValue(finances, 'footnotes', publishYear) ? getValue(finances, 'footnotes', publishYear).replace(/[^.]$/, '.') + '  ' : '' }}
+        Financial data from fiscal year ending {{ formatDate(getValue(finances, 'fiscalYearEnd', publishYear), 'MMM DD, YYYY') }}.</p>
 
         <div class="company-meta">
           {{ categoryName }} <span class="spacer"></span>
@@ -27,7 +34,7 @@
 
           {{#if www}}
             <span class="spacer"></span>
-            <a href="{{ www.indexOf('http') === 0 ? www : 'http://' + www }}" target="_blank" rel="noopener">{{ www.replace(/https?:\/\//, '').replace('www.', '') }}</a>
+            <a href="{{ linkURL }}" target="_blank" rel="noopener">{{ linkText }}</a>
           {{/if}}
         </div>
       </div>
@@ -50,31 +57,33 @@
             <span>${{ abbreviateNumber(getValue(finances, 'revenue', publishYear)) }}</span> in revenue
           </div>
 
-          <div class="financial-data revenue-change">
-            <span>
-              {{ getChange(finances, 'revenue', publishYear) }}
-            </span>
+          {{#if getValue(finances, 'revenue', publishYear - 1)}}
+            <div class="financial-data revenue-change">
+              <span>
+                {{ getChange(finances, 'revenue', publishYear) }}
+              </span>
 
-            {{#if getChange(finances, 'revenue', publishYear, 2, false) < 0}}
-              <span class="decrease" title="A decrease in revenue from last year."></span>
-            {{/if}}
-            {{#if getChange(finances, 'revenue', publishYear, 2, false) > 0}}
-              <span class="increase" title="An increase in revenue from last year."></span>
-            {{/if}}
+              {{#if getChange(finances, 'revenue', publishYear, 2, false) < 0}}
+                <span class="decrease" title="A decrease in revenue from last year."></span>
+              {{/if}}
+              {{#if getChange(finances, 'revenue', publishYear, 2, false) > 0}}
+                <span class="increase" title="An increase in revenue from last year."></span>
+              {{/if}}
 
-            change from 2016
+              change from {{ publishYear - 1 }}
+            </div>
+          {{/if}}
+
+          <div class="financial-data expenses">
+            <span>{{ abbreviateNumber(getValue(finances, 'expenses', publishYear)) }}</span> in expenses
           </div>
 
-          <div class="financial-data revenue-ratio">
+          <!-- <div class="financial-data revenue-ratio">
             <span>{{ round(getValue(finances, 'revenue', publishYear) / getValue(finances, 'expenses', publishYear)) }}</span> ratio to expenses
-          </div>
+          </div> -->
 
           <div class="financial-data excess">
             <span>{{ getValue(finances, 'excess', publishYear) < 0 ? '-$' : '$' }}{{ abbreviateNumber(getValue(finances, 'excess', publishYear)).replace('-', '') }}</span> in excess
-          </div>
-
-          <div class="financial-data fiscal-year-end">
-            Data from fiscal year ending {{ formatDate(getValue(finances, 'fiscalYearEnd', publishYear), 'MMM DD, YYYY') }}.
           </div>
         {{/if}}
       </div>
@@ -97,28 +106,34 @@
             <span>{{ officerName }}</span><br>{{ officers[publishYear].title }}
           </div>
 
-          <div class="leadership-data compensation">
-            <span>${{ abbreviateNumber(getValue(officers, 'total', publishYear)) }}</span> in compensation
-          </div>
+          {{#if getValue(officers, 'total', publishYear)}}
+            <div class="leadership-data compensation">
+              <span>${{ abbreviateNumber(getValue(officers, 'total', publishYear)) }}</span> in compensation
+            </div>
+          {{/if}}
 
-          <div class="leadership-data compensation-change">
-            <span>
-              {{ getChange(officers, 'total', publishYear) }}
-            </span>
+          {{#if getValue(officers, 'total', publishYear - 1)}}
+            <div class="leadership-data compensation-change">
+              <span>
+                {{ getChange(officers, 'total', publishYear) }}
+              </span>
 
-            {{#if getChange(officers, 'total', publishYear, 2, false) < 0}}
-              <span class="decrease" title="A decrease in compensation from last year."></span>
-            {{/if}}
-            {{#if getChange(officers, 'total', publishYear, 2, false) > 0}}
-              <span class="increase" title="An increase in compensation from last year."></span>
-            {{/if}}
+              {{#if getChange(officers, 'total', publishYear, 2, false) < 0}}
+                <span class="decrease" title="A decrease in compensation from last year."></span>
+              {{/if}}
+              {{#if getChange(officers, 'total', publishYear, 2, false) > 0}}
+                <span class="increase" title="An increase in compensation from last year."></span>
+              {{/if}}
 
-            change from 2016
-          </div>
+              change from {{ publishYear - 1 }}
+            </div>
+          {{/if}}
 
-          <div class="leadership-data compensation-revenue-ratio">
-            <span>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'revenue', publishYear), 4) }}%</span> of revenue
-          </div>
+          {{#if getValue(officers, 'total', publishYear)}}
+            <div class="leadership-data compensation-revenue-ratio">
+              <span>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'expenses', publishYear), 4) }}%</span> of expenses
+            </div>
+          {{/if}}
         </div>
       {{/if}}
 
@@ -193,9 +208,11 @@ export default {
 
     formatDate: function(date, format) {
       //return window.moment(date).format(format);
-      return date && date.toLocaleString
-        ? date.toLocaleString().split('T')[0]
-        : '';
+      return moment && date
+        ? moment(date).format(format)
+        : date && date.toLocaleString
+          ? date.toLocaleString().split('T')[0]
+          : '';
     },
 
     // https://stackoverflow.com/questions/10599933/convert-long-number-into-abbreviated-string-in-javascript-with-a-special-shortn
@@ -239,6 +256,19 @@ export default {
           (officers[publishYear].suffix
             ? ', ' + officers[publishYear].suffix
             : '')
+        : '';
+    },
+
+    linkURL: www => {
+      return www && www.indexOf('http') === 0 ? www : 'http://' + www;
+    },
+
+    linkText: www => {
+      return www
+        ? www
+          .replace(/https?:\/\//, '')
+          .replace('www.', '')
+          .replace(/\/$/, '')
         : '';
     }
   }
