@@ -8,15 +8,15 @@ rank,company,revenue,previousRevenue,revenueChangePercent,expenses,grantsAsPerce
 7,Essentia Health,1990370000,1955600000,1.7779709552055636,1957000000,0.1260067223682029,33368000,2017-06-30,David Herman,1746490,This information is from Essentia Health's Consolidated Financial Statements.
 8,UCare,1705250000,3537500000,-51.79505300353357,1728830000,0.00784940624541856,-23573600,2016-12-31,"James Eppel, Jr.",926882,UCare’s revenue from Medical Assistance and MinnesotaCare programs decreased significantly in 2016. The Department of Human Services did not renew contracts with UCare for these programs (with the exception of Olmsted County) following a competitive bidding process in 2015.
 9,CentraCare Health,1243410000,1259600000,-1.2853286757700857,1229040000,0.41600517930529757,14374800,2016-06-30,Kenneth Holmen,1133330,
-10,HealthEast,995311000,974000000,2.187987679671458,1002350000,0.1573940205624172,-7034000,2016-08-31,,,"HealthEast combined with Fairview Health Services in June 2017. 
+10,HealthEast,995311000,974000000,2.187987679671458,1002350000,0.1573940205624172,-7034000,2016-08-31,Kathryn Correia,1086980,"HealthEast combined with Fairview Health Services in June 2017. 
 Fairview is the parent company with HealthEast and its entities falling under the Fairview umbrella. The financial information was sourced from the HealthEast audited consolidated statements for the fiscal year ending 8-31-16, Excess is loss from operations"
 11,Hennepin Healthcare System Inc.,972075000,916800000,6.029123036649215,1002150000,6.241226242831057,-30071600,2016-12-31,Jon Pryor,877729,
 12,North Memorial Health Care,896215000,839200000,6.793970448045758,893934000,0.06422320536924733,24422400,2016-12-31,Dr. J. Kevin Croston,1041210,North Memorial Health Care information is taken from the consolidated financial statement which includes North Memorial Medical Center and Maple Grove Hospital.
 13,Children's Minnesota,843622000,801500000,5.255396132252028,787865000,3.6486246209795383,55757000,2016-12-31,Robert Bonar Jr,1496820,
 14,University of Minnesota Physicians,521783000,482200000,8.208834508502697,517853000,,3930830,2016-06-30,Barbara Daniels,809736,
 15,St. Luke's Hospital of Duluth,431938000,409100000,5.582498166707406,424788000,0.2979084961267589,7150020,2016-12-31,John Strange,818838,
-16,National Marrow Donor Program,391960000,397600000,-1.4185110663983904,370486000,13.033829982651291,21474200,2016-09-30,,,
-17,University of St. Thomas,371762000,359900000,3.295915532092248,373976000,7.1084995238889395,-2213590,2016-06-30,Julie Sullivan,715152,
+16,National Marrow Donor Program,391960000,397600000,-1.4185110663983904,370486000,13.033829982651291,21474200,2016-09-30,Dr. Jeffrey Chell,986996,
+17,University of St. Thomas,371762000,359900000,3.295915532092248,373976000,7.1084995238889395,-2213590,2016-06-30,,,
 18,Presbyterian Homes and Services,369100000,340500000,8.399412628487518,351763000,1.4830669195340016,17337000,2016-09-30,Daniel Lindh,917584,Fiscal Year 9/30/16 audited numbers
 19,Benedictine Health System,253012000,237000000,6.756118143459916,258273000,1.3232573949061706,-5261000,2016-06-30,"Rocklon ""Rocky"" Chapin",587708,"Jerry Carley has been named as president/CEO of Benedictine Health System, effective Jan. 3, 2018. Rocklon “Rocky” Chapin announced his retirement in March 2017."
 20,Gillette Children's Specialty Healthcare,243168000,240200000,1.2356369691923397,232481000,1.7784042308198447,10687700,2016-12-31,Barbara Joers,870372,
@@ -24,7 +24,7 @@ Fairview is the parent company with HealthEast and its entities falling under th
 22,Carleton College,213597000,210600000,1.4230769230769231,177273000,19.00410586291006,36234100,2016-12-31,Steven Poskanzer,564140,The college incurred unrealized losses on investments in FY16 of $57.8 million
 23,Olmsted Medical Center,205269000,194400000,5.591049382716049,183780000,0.1934339817507758,21489400,2016-12-31,Kathryn Lombardo,604316,
 24,Scholarship America,201467000,210300000,-4.200190204469805,205726000,89.50994455667679,-4259360,2016-12-31,Robert Ballard,322532,Consolidation includes national organization and affiliates (two separate 990's)
-25,St. Olaf College,198530000,205800000,-3.532555879494655,186619000,13.16541580617539,11911700,2016-05-31,,,
+25,St. Olaf College,198530000,205800000,-3.532555879494655,186619000,13.16541580617539,11911700,2016-05-31,David Anderson,402449,
 26,Hazelden Betty Ford Foundation,182165000,223600000,-18.53085867620751,189954000,6.322619603107073,-7789670,2016-12-31,Mark Mishek,679717,
 27,American Public Media Group,168047000,134200000,25.221311475409834,138429000,67.7108189970663,29618000,2017-06-30,Jon McTaggart,690006,"Compensation for McTaggart is for the 2016 calendar year, which is the latest compensation information available."
 28,Ecumen,167944000,153100000,9.695623775310255,167092000,1.4010622588481874,852000,2016-12-31,Kathryn Roberts,642488,
@@ -47,17 +47,17 @@ Fairview is the parent company with HealthEast and its entities falling under th
 45,College of St. Benedict,114667000,111300000,3.0251572327044025,106441000,10.649445786494807,8225880,2016-06-30,Mary Dana Hinton,408369,
 46,"Accra Care, Inc",110428000,91200000,21.083333333333336,105467000,,4960920,2016-12-31,John Dahm,314278,"Accra is comprised of six nonprofits in the healthcare industry: Accra Care, Inc; Choices for Children, Inc; Consumer Choice Services, Inc; Accra Home Health, Inc; Accra Home Care, Inc; and Service Management Group, Inc."
 47,Lakewood Health System,99376800,96200000,3.302286902286902,98139900,0.9348358973120486,114735000,2016-12-31,Tim Rice,494659,
-48,St. Mary's University of Minnesota,97792600,95100000,2.831335436382755,88931600,14.006581275065802,8861080,2016-05-31,,,
+48,St. Mary's University of Minnesota,97792600,95100000,2.831335436382755,88931600,14.006581275065802,8861080,2016-05-31,"Brother William Mann, FSC, D.Min.",19601,
 49,University of Northwestern - St. Paul,95859400,94600000,1.331289640591966,89777400,20.965393065260162,6081990,2015-06-30,Alan Cureton,371470,
 50,Hutchinson Health,90659000,,,87831100,0.10190714656018707,2827860,2016-12-31,Steve Larson,400463,
 51,Greater Twin Cities United Way,87943800,98600000,-10.807505070993916,94334900,96.90052055972109,-6391120,2016-12-31,Sarah Caruso,450326,
 52,Pheasants Forever Inc.,87308500,54300000,60.789134438305716,85542900,81.43193388959837,1765610,2016-06-30,Howard Vincent,319551,Numbers from the audited financial statements
 53,Grand Itasca Clinic and Hospital,83880500,76000000,10.36907894736842,85215000,,-1334460,2016-12-31,,,"Grand Itasca joined Fairview effective Jan. 1, 2017"
 54,MRCI WorkSource,76146900,71200000,6.947893258426967,74676300,7.436231809830734,1470600,2017-01-01,Brian Benshoof,171877,
-55,Salvation Army - Northern Division,71782100,68900000,4.183018867924528,71431300,78.11473891123273,350823,2016-09-30,,,Richardson was named new leader of the Salvation Army in June 2016. The IRS recognizes The Salvation Army as a church and they are not required to file a 990.
+55,Salvation Army - Northern Division,71782100,68900000,4.183018867924528,71431300,78.11473891123273,350823,2016-09-30,Lonneal Richardson,78068,Richardson was named new leader of the Salvation Army in June 2016. The IRS recognizes The Salvation Army as a church and they are not required to file a 990.
 56,Walker Methodist,67397500,66400000,1.5022590361445785,74044900,1.3933454504989058,-6647470,2016-12-31,Scott Riddle,280664,
 57,Nexus,67189900,76100000,-11.708409986859396,65877200,,1312710,2016-12-31,,,"Hutcinson retired on March 3, 2017 and replaced by Brock Wolff. Nexus consolidated results do not include operating activities of Woodbourne Center"
-58,Volunteers of America Care Facilities,66750000,49300000,35.39553752535497,68531000,0.2382022471910112,-1781000,2017-06-30,,,
+58,Volunteers of America Care Facilities,66750000,49300000,35.39553752535497,68531000,0.2382022471910112,-1781000,2017-06-30,Michael King,538642,
 59,Catholic Charities of the Archdiocese of St. Paul & Minneapolis,65851800,53700000,22.62905027932961,50683200,52.45581745677414,15168500,2016-06-30,Tim Marx,270094,"Catholic Charities started a capital campaign in early 2015 for a new homeless shelter, housing, and social service facility in St. Paul to replace the Dorothy Day Center shelter.  A significant share of the increase in revenues and net revenue over expense is related to this capital campaign."
 60,St. Therese Foundation,65177300,49600000,31.405846774193545,69364000,1.0018610773996468,-4186730,2017-06-30,Barbara Rode,257059,
 61,Glencoe Regional Health Services,63770600,57500000,10.905391304347827,58661800,1.2950732782818415,5108850,2016-12-31,Jon Braband,268202,
@@ -68,7 +68,7 @@ Fairview is the parent company with HealthEast and its entities falling under th
 66,Tri-County Health Care,60110200,57100000,5.271803852889667,59211000,1.269030879950491,899210,2016-12-31,Joel Beiswenger,331607,
 67,CommonBond Communities,59927000,,,70122300,10.998264555208838,-10195300,2016-12-31,Deidre Schmidt,254816,
 68,Minnesota Historical Society,59351900,63600000,-6.679402515723271,57205400,79.55313983208625,2146540,2016-06-30,D. Stephen Elliott,341851,
-69,The Blake School,59340300,63700000,-6.844113029827316,44963300,25.929595906997438,14377000,2016-06-30,,,
+69,The Blake School,59340300,63700000,-6.844113029827316,44963300,25.929595906997438,14377000,2016-06-30,Anne Stavney,530324,
 70,Riverview Healthcare Association,58513000,53300000,9.78048780487805,54399400,0.3465417941312187,4113540,2016-09-30,Carrie Michalski,352131,
 71,Community Memorial Hospital Association,56751400,49600000,14.418145161290322,53509800,0.35484763371476297,3241630,2016-09-30,Rick Breuer,301317,
 72,Senior Care Communities Inc.,56393300,57600000,-2.094965277777778,56065200,0.4877121927604875,328058,2016-12-31,Susan Landwehr Marshall,30000,
@@ -84,14 +84,14 @@ Fairview is the parent company with HealthEast and its entities falling under th
 82,Volunteers of America - Minnesota and Wisconsin,44682100,43100000,3.6707656612529007,44173000,3.1757459922429785,509133,2016-06-30,Paula Hart,269376,These totals combine IRS Form 990s for Volunteers of America of Minnesota and Wisconsin.
 83,Accessible Space Inc.,42275000,44300000,-4.571106094808126,48483100,16.290076877587225,-6208130,2016-12-31,Stephen Vander Schaaf,453795,Expenses include depreciation of $9.2 million
 84,Minnesota Masonic Charities,42251100,37800000,11.775396825396825,42046500,1.1254050190409244,204513,2016-12-31,Eric J. Neetenbeek,413301,
-85,Breck School,41342300,42000000,-1.565952380952381,40538700,11.68418302803666,803596,2016-06-30,,,"Edward Kim was head of school through June 2017. Dr. Natalia Rico Hernández was appointed new head of school of July 1, 2017"
+85,Breck School,41342300,42000000,-1.565952380952381,40538700,11.68418302803666,803596,2016-06-30,Edward Kim,540489,"Edward Kim was head of school through June 2017. Dr. Natalia Rico Hernández was appointed new head of school of July 1, 2017"
 86,Planned Parenthood  MN/ND/SD,40857100,44400000,-7.979504504504504,84678100,33.38244760396602,-43821000,2016-06-30,Sarah Stoesz,464162,"Planned Parenthood’s expenses include a transfer of property and funds worth $42.1 million to create a new fund  to solicit and manage major gifts, property and an endowment to be called Planned Parenthood Minnesota, North Dakota, South Dakota Fund."
 87,Twin Cities Public Television,40602800,36000000,12.785555555555556,32997900,89.10518486409804,7604920,2016-08-31,James Pagliarini,430526,
 88,American Refugee Committee,40571800,47900000,-15.298956158663884,47532800,99.61894715048383,-6961030,2016-03-31,Daniel Wordsworth,271765,
 89,Minnesota Diversified Industries Inc.,39628300,45500000,-12.904835164835166,33748200,5.23661120966582,5880070,2016-12-31,Peter McDErmott,264432,
 90,Stevens Community Medical Center,39408700,39300000,0.2765903307888041,37627900,0.40687969915272515,1780820,2016-12-31,Jason Breuer,250472,
 91,Community Involvement Programs Inc.,39289800,39000000,0.7430769230769231,39488600,0.10275694964087372,-198802,2017-07-18,Rita Wiersma,142361,
-92,Science Museum of Minnesota,39269700,37300000,5.280697050938338,38127000,41.876052019750595,1142750,2016-06-30,,,Alison Brown succeeded Eric Jolly as president of the Science Museum in March 2016. Compensation not available
+92,Science Museum of Minnesota,39269700,37300000,5.280697050938338,38127000,41.876052019750595,1142750,2016-06-30,Alison Brown,0,Alison Brown succeeded Eric Jolly as president of the Science Museum in March 2016. Compensation not available
 93,Amherst H Wilder Foundation,38611000,41200000,-6.283980582524272,50212100,20.71860350677268,-11601100,2016-06-30,MayKao Hang,301371,
 94,Mitchell Hamline School of Law,37742600,,,38463300,16.702823864810583,-720752,2016-06-30,Eric S. Janus,300980,
 95,The Minneapolis Society of Fine Arts,36586600,58100000,-37.02822719449225,39178900,62.74974990843643,-2592250,2016-06-30,Kaywin Feldman,725495,

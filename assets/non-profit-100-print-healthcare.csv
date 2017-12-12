@@ -8,14 +8,14 @@ rank,company,revenue,previousRevenue,revenueChangePercent,expenses,grantsAsPerce
 7,Essentia Health,1990370000,1955600000,1.7779709552055636,1957000000,0.1260067223682029,33368000,2017-06-30,David Herman,1746490,This information is from Essentia Health's Consolidated Financial Statements.
 8,UCare,1705250000,3537500000,-51.79505300353357,1728830000,0.00784940624541856,-23573600,2016-12-31,"James Eppel, Jr.",926882,UCare’s revenue from Medical Assistance and MinnesotaCare programs decreased significantly in 2016. The Department of Human Services did not renew contracts with UCare for these programs (with the exception of Olmsted County) following a competitive bidding process in 2015.
 9,CentraCare Health,1243410000,1259600000,-1.2853286757700857,1229040000,0.41600517930529757,14374800,2016-06-30,Kenneth Holmen,1133330,
-10,HealthEast,995311000,974000000,2.187987679671458,1002350000,0.1573940205624172,-7034000,2016-08-31,,,"HealthEast combined with Fairview Health Services in June 2017. 
+10,HealthEast,995311000,974000000,2.187987679671458,1002350000,0.1573940205624172,-7034000,2016-08-31,Kathryn Correia,1086980,"HealthEast combined with Fairview Health Services in June 2017. 
 Fairview is the parent company with HealthEast and its entities falling under the Fairview umbrella. The financial information was sourced from the HealthEast audited consolidated statements for the fiscal year ending 8-31-16, Excess is loss from operations"
 11,Hennepin Healthcare System Inc.,972075000,916800000,6.029123036649215,1002150000,6.241226242831057,-30071600,2016-12-31,Jon Pryor,877729,
 12,North Memorial Health Care,896215000,839200000,6.793970448045758,893934000,0.06422320536924733,24422400,2016-12-31,Dr. J. Kevin Croston,1041210,North Memorial Health Care information is taken from the consolidated financial statement which includes North Memorial Medical Center and Maple Grove Hospital.
 13,Children's Minnesota,843622000,801500000,5.255396132252028,787865000,3.6486246209795383,55757000,2016-12-31,Robert Bonar Jr,1496820,
 14,University of Minnesota Physicians,521783000,482200000,8.208834508502697,517853000,,3930830,2016-06-30,Barbara Daniels,809736,
 15,St. Luke's Hospital of Duluth,431938000,409100000,5.582498166707406,424788000,0.2979084961267589,7150020,2016-12-31,John Strange,818838,
-16,National Marrow Donor Program,391960000,397600000,-1.4185110663983904,370486000,13.033829982651291,21474200,2016-09-30,,,
+16,National Marrow Donor Program,391960000,397600000,-1.4185110663983904,370486000,13.033829982651291,21474200,2016-09-30,Dr. Jeffrey Chell,986996,
 18,Presbyterian Homes and Services,369100000,340500000,8.399412628487518,351763000,1.4830669195340016,17337000,2016-09-30,Daniel Lindh,917584,Fiscal Year 9/30/16 audited numbers
 19,Benedictine Health System,253012000,237000000,6.756118143459916,258273000,1.3232573949061706,-5261000,2016-06-30,"Rocklon ""Rocky"" Chapin",587708,"Jerry Carley has been named as president/CEO of Benedictine Health System, effective Jan. 3, 2018. Rocklon “Rocky” Chapin announced his retirement in March 2017."
 20,Gillette Children's Specialty Healthcare,243168000,240200000,1.2356369691923397,232481000,1.7784042308198447,10687700,2016-12-31,Barbara Joers,870372,
@@ -33,7 +33,7 @@ Fairview is the parent company with HealthEast and its entities falling under th
 53,Grand Itasca Clinic and Hospital,83880500,76000000,10.36907894736842,85215000,,-1334460,2016-12-31,,,"Grand Itasca joined Fairview effective Jan. 1, 2017"
 56,Walker Methodist,67397500,66400000,1.5022590361445785,74044900,1.3933454504989058,-6647470,2016-12-31,Scott Riddle,280664,
 57,Nexus,67189900,76100000,-11.708409986859396,65877200,,1312710,2016-12-31,,,"Hutcinson retired on March 3, 2017 and replaced by Brock Wolff. Nexus consolidated results do not include operating activities of Woodbourne Center"
-58,Volunteers of America Care Facilities,66750000,49300000,35.39553752535497,68531000,0.2382022471910112,-1781000,2017-06-30,,,
+58,Volunteers of America Care Facilities,66750000,49300000,35.39553752535497,68531000,0.2382022471910112,-1781000,2017-06-30,Michael King,538642,
 60,St. Therese Foundation,65177300,49600000,31.405846774193545,69364000,1.0018610773996468,-4186730,2017-06-30,Barbara Rode,257059,
 61,Glencoe Regional Health Services,63770600,57500000,10.905391304347827,58661800,1.2950732782818415,5108850,2016-12-31,Jon Braband,268202,
 64,American Baptist Homes of the Midwest,62716400,78100000,-19.69731113956466,70505500,,-7789190,2016-08-31,,,

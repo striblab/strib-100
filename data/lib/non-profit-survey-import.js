@@ -152,7 +152,7 @@ async function main() {
     // Officer, make sure there is at least a last name
     let officer;
     let salary;
-    if (r['Last Name'] && r['Salary']) {
+    if (r['Last Name'] && (r['Salary'] || r['Total compensation'])) {
       let officerLookup = _.find(current.officers, e => {
         return e.COID === r['Star Tribune ID'] && e.Last === r['Last Name'];
       });

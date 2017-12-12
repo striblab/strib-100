@@ -1,8 +1,8 @@
 rank,company,revenue,previousRevenue,revenueChangePercent,expenses,grantsAsPercentOfRevenue,excess,fiscalYearEnd,topOfficer,compensation,footnotes
-17,University of St. Thomas,371762000,359900000,3.295915532092248,373976000,7.1084995238889395,-2213590,2016-06-30,Julie Sullivan,715152,
+17,University of St. Thomas,371762000,359900000,3.295915532092248,373976000,7.1084995238889395,-2213590,2016-06-30,,,
 22,Carleton College,213597000,210600000,1.4230769230769231,177273000,19.00410586291006,36234100,2016-12-31,Steven Poskanzer,564140,The college incurred unrealized losses on investments in FY16 of $57.8 million
 24,Scholarship America,201467000,210300000,-4.200190204469805,205726000,89.50994455667679,-4259360,2016-12-31,Robert Ballard,322532,Consolidation includes national organization and affiliates (two separate 990's)
-25,St. Olaf College,198530000,205800000,-3.532555879494655,186619000,13.16541580617539,11911700,2016-05-31,,,
+25,St. Olaf College,198530000,205800000,-3.532555879494655,186619000,13.16541580617539,11911700,2016-05-31,David Anderson,402449,
 29,Macalester College,160633000,180200000,-10.858490566037736,164482000,6.411758480511476,-3848640,2016-05-31,Brian Rosenberg,770925,
 30,Gustavus Adolphus College,157125000,140700000,11.673773987206824,135572000,22.04766905330151,21553100,2016-05-31,Rebecca Bergman,437482,
 32,Bethel University,148396000,148500000,-0.07003367003367005,143482000,10.446103668562495,4914280,2016-05-31,James Barnes,270137,
@@ -13,12 +13,12 @@ rank,company,revenue,previousRevenue,revenueChangePercent,expenses,grantsAsPerce
 43,Hamline University,117567000,124300000,-5.416733708769107,122701000,5.977901962285335,-5133620,2016-06-30,Fayneese Miller,224574,"The president of the University, Fayneese Miller, was only president for one-half of the calendar year as presented in the 990. During FY16, Hamline University's Scool of Law combined with William Mitchell College of Law to become the independent Mitchell Hamline School of Law.  Hamline's School of Law operated through December 2015 (FY16) and the combination and significant write-off of Scool of Law assets were the primary contributing factor to the operating loss in the fiscal year."
 44,College of St. Scholastica,115015000,123600000,-6.9457928802588995,111181000,9.488240664261182,3834460,2016-06-30,George Goodwin,442318,
 45,College of St. Benedict,114667000,111300000,3.0251572327044025,106441000,10.649445786494807,8225880,2016-06-30,Mary Dana Hinton,408369,
-48,St. Mary's University of Minnesota,97792600,95100000,2.831335436382755,88931600,14.006581275065802,8861080,2016-05-31,,,
+48,St. Mary's University of Minnesota,97792600,95100000,2.831335436382755,88931600,14.006581275065802,8861080,2016-05-31,"Brother William Mann, FSC, D.Min.",19601,
 49,University of Northwestern - St. Paul,95859400,94600000,1.331289640591966,89777400,20.965393065260162,6081990,2015-06-30,Alan Cureton,371470,
 63,Concordia University,63104400,63100000,0.006973058637083994,54633000,10.155409131534409,8471370,2016-06-30,Thomas Ries,289588,
 68,Minnesota Historical Society,59351900,63600000,-6.679402515723271,57205400,79.55313983208625,2146540,2016-06-30,D. Stephen Elliott,341851,
-69,The Blake School,59340300,63700000,-6.844113029827316,44963300,25.929595906997438,14377000,2016-06-30,,,
-85,Breck School,41342300,42000000,-1.565952380952381,40538700,11.68418302803666,803596,2016-06-30,,,"Edward Kim was head of school through June 2017. Dr. Natalia Rico Hernández was appointed new head of school of July 1, 2017"
+69,The Blake School,59340300,63700000,-6.844113029827316,44963300,25.929595906997438,14377000,2016-06-30,Anne Stavney,530324,
+85,Breck School,41342300,42000000,-1.565952380952381,40538700,11.68418302803666,803596,2016-06-30,Edward Kim,540489,"Edward Kim was head of school through June 2017. Dr. Natalia Rico Hernández was appointed new head of school of July 1, 2017"
 94,Mitchell Hamline School of Law,37742600,,,38463300,16.702823864810583,-720752,2016-06-30,Eric S. Janus,300980,
 97,Books for Africa Inc.,35600400,35700000,-0.27899159663865547,36258300,0.09982753002775249,-657947,2017-06-30,Patrick Plonski,144783,"The loss of $657,947 reported indicates a reduction in the value of donated books from the previous fiscal year to the current fiscal year."
 99,Northstar Education Finance Inc.,34497100,77200000,-55.31463730569948,77782300,,-43285200,2016-09-30,Richard Nigon,50000,NEF management and administrative operations are performed by a third-party pursuant to certain management agreements.
