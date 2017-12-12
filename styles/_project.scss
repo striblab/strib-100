@@ -8,6 +8,11 @@
   text-align: center;
 }
 
+.nowrap-item {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 dl {
   font-size: 0.9em;
   padding: 0.2em 0 0.25em 0.4em;

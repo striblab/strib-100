@@ -58,13 +58,13 @@ $grid-padding: 0.75rem !default;
 
   // Bottom space
   .grid-space {
-    margin-bottom: 1em;
+    margin-bottom: $grid-padding * 2;
   }
 
   @each $name, $size in $breakpoints {
     @media only screen and (min-width: #{$size}) {
       .grid-space-#{$name} {
-        margin-bottom: 1em;
+        margin-bottom: $grid-padding * 2;
       }
     }
   }

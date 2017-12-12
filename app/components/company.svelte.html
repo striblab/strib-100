@@ -20,21 +20,31 @@
         Financial data from fiscal year ending {{ formatDate(getValue(finances, 'fiscalYearEnd', publishYear), 'MMM DD, YYYY') }}.</p>
 
         <div class="company-meta">
-          {{ categoryName }} <span class="spacer"></span>
+          <span class="nowrap-item">
+            {{ categoryName }} <span class="spacer"></span>
+          </span>
 
-          2016 ranking: <strong>{{ previousRank ? previousRank : '-' }}</strong>
-          {{#if previousRank && rank > previousRank}}
-            <span class="decrease" title="A decrease in rank from last year."></span>
-          {{/if}}
-          {{#if previousRank && rank < previousRank}}
-            <span class="increase" title="An increase in rank from last year."></span>
-          {{/if}} <span class="spacer"></span>
+          <span class="nowrap-item">
+            2016 ranking: <strong>{{ previousRank ? previousRank : '-' }}</strong>
+            {{#if previousRank && rank > previousRank}}
+              <span class="decrease" title="A decrease in rank from last year."></span>
+            {{/if}}
+            {{#if previousRank && rank < previousRank}}
+              <span class="increase" title="An increase in rank from last year."></span>
+            {{/if}} <span class="spacer"></span>
+          </span>
 
-          {{ city }}
+          <span class="nowrap-item">
+            {{ city }}
+            {{#if www}}
+              <span class="spacer"></span>
+            {{/if}}
+          </span>
 
           {{#if www}}
-            <span class="spacer"></span>
-            <a href="{{ linkURL }}" target="_blank" rel="noopener">{{ linkText }}</a>
+            <span class="nowrap-item">
+              <a href="{{ linkURL }}" target="_blank" rel="noopener">{{ linkText }}</a>
+            </span>
           {{/if}}
         </div>
       </div>
@@ -136,8 +146,6 @@
           {{/if}}
         </div>
       {{/if}}
-
-      <div class="col col-md-6">&nbsp;</div>
     </div>
   {{/if}}
 </div>

@@ -12,8 +12,6 @@
   }
 
   .company-heading {
-    padding-bottom: 0.5em;
-
     h3 {
       padding-top: 0;
     }
@@ -50,7 +48,7 @@
     font-size: 0.85em;
     cursor: pointer;
     color: map-get($theme, 'blue-dark');
-    transition: opacity, color 500ms;
+    transition: color 500ms, opacity 1s;
     text-decoration: underline;
     opacity: 1;
 
@@ -69,7 +67,6 @@
   }
 
   .notes {
-    padding-top: 1em;
     font-size: 0.85em;
     color: map-get($grays, medium);
     max-height: 0;
@@ -77,6 +74,7 @@
     overflow-y: hidden;
 
     &.is-shown {
+      padding-top: 1em;
       max-height: 15em;
     }
   }
