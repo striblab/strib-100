@@ -8,6 +8,7 @@ coid,company,officerName,officerID
 200360007,Essentia Health,David Herman,111823
 363573805,UCare,"James Eppel, Jr.",111824
 410695596,CentraCare Health,Kenneth Holmen,111825
+411560657,HealthEast,,
 421707837,Hennepin Healthcare System Inc.,Jon Pryor,12019
 410729979,North Memorial Health Care,Dr. J. Kevin Croston,11959
 2533,Children's Minnesota,Robert Bonar Jr,111826
@@ -16,7 +17,6 @@ coid,company,officerName,officerID
 840865803,National Marrow Donor Program,,
 410693970,University of St. Thomas,Julie Sullivan,10528
 411500288,Presbyterian Homes and Services,Daniel Lindh,10378
-411560657,HealthEast,,
 411531892,Benedictine Health System,"Rocklon ""Rocky"" Chapin",11958
 363379150,Gillette Children's Specialty Healthcare,Barbara Joers,11946
 311667875,Ridgeview Medical Center,Robert Stevens,9785
