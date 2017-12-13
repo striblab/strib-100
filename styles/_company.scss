@@ -130,6 +130,11 @@
       font-weight: bold;
     }
 
+    &.compensation-na span {
+      font-weight: normal;
+      font-style: italic;
+    }
+
     &.leader-name,
     &.revenue {
       margin-bottom: 1em;

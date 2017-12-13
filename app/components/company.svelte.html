@@ -116,13 +116,19 @@
             <span>{{ officerName }}</span><br>{{ officers[publishYear].title }}
           </div>
 
-          {{#if getValue(officers, 'total', publishYear)}}
-            <div class="leadership-data compensation">
-              <span>${{ abbreviateNumber(getValue(officers, 'total', publishYear)) }}</span> in compensation
-            </div>
-          {{/if}}
+          <div class="leadership-data compensation {{ getValue(officers, 'total', publishYear) ? '' : 'compensation-na'}}">
+            <span>
+              {{#if getValue(officers, 'total', publishYear)}}
+                ${{ abbreviateNumber(getValue(officers, 'total', publishYear)) }}
+              {{else}}
+                N/A
+              {{/if}}
+            </span>
+            {{#if getValue(officers, 'total', publishYear)}}in{{/if}}
+            compensation
+          </div>
 
-          {{#if getValue(officers, 'total', publishYear - 1)}}
+          {{#if getValue(officers, 'total', publishYear) && getValue(officers, 'total', publishYear - 1)}}
             <div class="leadership-data compensation-change">
               <span>
                 {{ getChange(officers, 'total', publishYear) }}
