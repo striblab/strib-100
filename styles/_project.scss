@@ -55,3 +55,41 @@ $color-categories: (
     color: darken($color, 50);
   }
 }
+
+// Dealing with (probably hackish) ways to show hide on mobile
+// or desktop
+.desktop-only,
+.desktop-only-inline,
+.desktop-only-inline-block {
+  display: none !important;
+}
+
+.desktop-page & .desktop-only {
+  display: block !important;
+}
+
+.desktop-page & .desktop-only-inline {
+  display: inline !important;
+}
+
+.desktop-page & .desktop-only-inline-block {
+  display: inline-block !important;
+}
+
+.mobile-only,
+.mobile-only-inline,
+.mobile-only-inline-block {
+  display: none !important;
+}
+
+.mobile-page & .mobile-only {
+  display: block !important;
+}
+
+.mobile-page & .mobile-only-inline {
+  display: inline !important;
+}
+
+.mobile-page & .mobile-only-inline-block {
+  display: inline-block !important;
+}

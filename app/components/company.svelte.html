@@ -13,10 +13,10 @@
 
         <p>
           {{ shortDesc }}&nbsp;
-          <span class="show-notes link {{ showNotes ? 'is-shown' : '' }}" on:click="set({ showNotes: true })">Notes</span>
+          <span class="desktop-only-inline show-notes link {{ showNotes ? 'is-shown' : '' }}" on:click="set({ showNotes: true })">Notes</span>
         </p>
 
-        <p class="notes {{ showNotes ? 'is-shown' : '' }}">Notes: {{ getValue(finances, 'footnotes', publishYear) ? getValue(finances, 'footnotes', publishYear).replace(/[^.]$/, '.') + '  ' : '' }}
+        <p class="desktop-only notes {{ showNotes ? 'is-shown' : '' }}">Notes: {{ getValue(finances, 'footnotes', publishYear) ? getValue(finances, 'footnotes', publishYear).replace(/[^.]$/, '.') + '  ' : '' }}
         Financial data from fiscal year ending {{ formatDate(getValue(finances, 'fiscalYearEnd', publishYear), 'MMM DD, YYYY') }}.</p>
 
         <div class="company-meta">
@@ -152,6 +152,13 @@
           {{/if}}
         </div>
       {{/if}}
+    </div>
+
+    <div class="row mobile-only">
+      <div class="col col-100">
+        <p class="mobile-only notes is-shown mobile-notes">Notes: {{ getValue(finances, 'footnotes', publishYear) ? getValue(finances, 'footnotes', publishYear).replace(/[^.]$/, '.') + '  ' : '' }}
+        Financial data from fiscal year ending {{ formatDate(getValue(finances, 'fiscalYearEnd', publishYear), 'MMM DD, YYYY') }}.</p>
+      </div>
     </div>
   {{/if}}
 </div>

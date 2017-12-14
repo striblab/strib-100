@@ -4,7 +4,7 @@
 
 .company {
   padding-bottom: 2em;
-  border-bottom: 2px solid #e8e8e8;
+  border-bottom: 2px solid #E8E8E8;
   margin-bottom: 2em;
 
   &.no-show {
@@ -79,6 +79,10 @@
       //padding-top: 1em;
       max-height: 15em;
     }
+
+    &.mobile-notes {
+      padding-top: 1.5em;
+    }
   }
 
   .company-meta {
@@ -100,7 +104,7 @@
     font-family: map-get($font-sets, 'benton-sans');
   }
 
-  .rank {
+  p.rank {
     font-family: map-get($font-sets, 'popular-light');
     font-style: normal;
     font-weight: normal;
