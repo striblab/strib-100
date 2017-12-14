@@ -21,3 +21,6 @@ $selector-wrapper: '.strib.aa.bb.cc.dd';
   @import 'company';
   @import 'hero';
 }
+
+// Outside wrapper
+@import 'cms-page-overrides';

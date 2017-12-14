@@ -1,0 +1,29 @@
+/**
+ * These live outside the selector wrapper to oerride things
+ * outside the main application.
+ */
+
+body .np100-footer {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
+  .row {
+    margin-bottom: 2em;
+
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  p.source-lines {
+    max-width: 50em;
+    margin: 0 auto 1em;
+    float: none;
+
+    &:last-child {
+      margin-bottom: 4em;
+    }
+  }
+}

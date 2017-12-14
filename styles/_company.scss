@@ -18,6 +18,7 @@
 
     p {
       font-family: map-get($font-sets, 'benton-sans');
+      margin-bottom: 0.5em;
     }
   }
 
@@ -66,15 +67,16 @@
     }
   }
 
-  .notes {
+  p.notes {
     font-size: 0.85em;
     color: map-get($grays, medium);
     max-height: 0;
+    margin-bottom: 0;
     transition: max-height 2s;
     overflow-y: hidden;
 
     &.is-shown {
-      padding-top: 1em;
+      //padding-top: 1em;
       max-height: 15em;
     }
   }
