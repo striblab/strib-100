@@ -264,7 +264,10 @@ export default {
 
     officerName: (officers, publishYear) => {
       return _.isObject(officers) && _.isObject(officers[publishYear])
-        ? officers[publishYear].first +
+        ? (officers[publishYear].salut
+          ? officers[publishYear].salut + ' '
+          : '') +
+          officers[publishYear].first +
           ' ' +
           officers[publishYear].last +
           (officers[publishYear].suffix
