@@ -6,12 +6,12 @@ coid,company,officerName,officerID
 363261413,Allina Health System,Penny Wheeler,12065
 410991680,Fairview Health Services,David Murphy,12066
 200360007,Essentia Health,David Herman,111823
-363573805,UCare,"James Eppel, Jr.",111824
+363573805,UCare,James Eppel,12067
 410695596,CentraCare Health,Kenneth Holmen,111825
 411560657,HealthEast,Kathryn Correia,11894
 421707837,Hennepin Healthcare System Inc.,Jon Pryor,12019
 410729979,North Memorial Health Care,Dr. J. Kevin Croston,11959
-2533,Children's Minnesota,Robert Bonar Jr,111826
+2533,Children's Minnesota,Robert Bonar,12068
 411843943,University of Minnesota Physicians,Barbara Daniels,11631
 410714079,St. Luke's Hospital of Duluth,John Strange,10461
 840865803,National Marrow Donor Program,Dr. Jeffrey Chell,10777
@@ -34,7 +34,7 @@ coid,company,officerName,officerID
 237417654,Second Harvest Heartland,Rob Zeaske,11572
 410872993,Lutheran Social Service of Minnesota,Jodi Harpstead,11193
 411539761,Elim Care Inc.,Robert Dahl,10643
-410695509,St. Catherine University,"Andrea Lee, IHM",9610
+410695509,St. Catherine University,Andrea Lee,9610
 410694721,Augsburg University,Paul Pribbenow,11502
 410693977,Concordia College,William Craft,11783
 410713914,Winona Health Services,Rachelle Schultz,111829
@@ -46,12 +46,13 @@ coid,company,officerName,officerID
 410969244,College of St. Benedict,Mary Dana Hinton,111831
 271442271,"Accra Care, Inc",John Dahm,11895
 411842965,Lakewood Health System,Tim Rice,9639
-410695527,St. Mary's University of Minnesota,"Brother William Mann, FSC, D.Min.",111844
+410695527,St. Mary's University of Minnesota,William Mann,11575
 410711610,University of Northwestern - St. Paul,Alan Cureton,63759
 841715908,Hutchinson Health,Steve Larson,111832
 411973442,Greater Twin Cities United Way,Sarah Caruso,11656
 411429149,Pheasants Forever Inc.,Howard Vincent,10732
 411865874,Grand Itasca Clinic and Hospital,Michael Youso,11696
+410706155,American Baptist Homes of the Midwest,David Zwickey,11579
 410736870,MRCI WorkSource,Brian Benshoof,11785
 410698597,Salvation Army - Northern Division,Lonneal Richardson,111833
 410706131,Walker Methodist,Scott Riddle,11906
@@ -62,7 +63,6 @@ coid,company,officerName,officerID
 411949230,Glencoe Regional Health Services,Jon Braband,63785
 410907857,Lifeworks Services Inc.,Judy Lysne,10807
 410696906,Concordia University,Thomas Ries,11061
-410706155,American Baptist Homes of the Midwest,David Zwickey,11579
 410745522,Aitkin Community Hospital,Chad Cooper,12010
 410713913,Tri-County Health Care,Joel Beiswenger,10957
 411260469,CommonBond Communities,Deidre Schmidt,12013
@@ -87,7 +87,7 @@ coid,company,officerName,officerID
 410948382,Planned Parenthood  MN/ND/SD,Sarah Stoesz,7015
 410769851,Twin Cities Public Television,James Pagliarini,6101
 363241033,American Refugee Committee,Daniel Wordsworth,11690
-411801370,Minnesota Diversified Industries Inc.,Peter McDErmott,111835
+411801370,Minnesota Diversified Industries Inc.,Peter McDermott,11578
 363311936,Stevens Community Medical Center,Jason Breuer,111836
 410972546,Community Involvement Programs Inc.,Rita Wiersma,12011
 410706172,Science Museum of Minnesota,Alison Brown,111845

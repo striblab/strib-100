@@ -64,12 +64,12 @@
           <h4 class="sr-only">Company financial details</h4>
 
           <div class="financial-data revenue">
-            <span>${{ abbreviateNumber(getValue(finances, 'revenue', publishYear)) }}</span> in revenue
+            <span title="The full revenue is ${{ getValue(finances, 'revenue', publishYear) }}">${{ abbreviateNumber(getValue(finances, 'revenue', publishYear)) }}</span> in revenue
           </div>
 
           {{#if getValue(finances, 'revenue', publishYear - 1)}}
             <div class="financial-data revenue-change">
-              <span>
+              <span title="Last year's revenue was ${{ abbreviateNumber(getValue(finances, 'revenue', publishYear - 1)) }}">
                 {{ getChange(finances, 'revenue', publishYear) }}
               </span>
 
@@ -277,8 +277,8 @@ export default {
           officers[publishYear].first +
           ' ' +
           officers[publishYear].last +
-          (officers[publishYear].suffix
-            ? ', ' + officers[publishYear].suffix
+          (officers[publishYear].lineage
+            ? ', ' + officers[publishYear].lineage
             : '')
         : '';
     },

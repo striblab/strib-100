@@ -2,17 +2,17 @@ rank,company,revenue,previousRevenue,revenueChangePercent,expenses,grantsAsPerce
 1,Blue Cross and Blue Shield of Minnesota,12090100000,10692400000,13.071901537540684,11512000000,,103411000,2016-12-31,Michael Guyette,3112480,Blue Cross and Blue Shield of Minnesota is an independent licensee of the Blue Cross and Blue Shield Association headquartered in Chicago.
 2,Mayo Clinic,10998000000,10315000000,6.621425109064469,10523000000,,475000000,2016-12-31,John Noseworthy,2806670,
 3,Medica,6103820000,5135300000,18.860047124802833,6366260000,,-262444000,2016-12-31,David Tilford,2107220,"Total revenue, expenses, and excess include amounts from Medica’s for profit entities that do not file 990s . Those amounts were sourced from the for profit entities’ 2016 Annual Filings or internal financials.  All other amounts are the combined totals from the 990s for Medica Health Plans and Medica Health Plans of Wisconsin.  David Tilford retired from Medica at the end of 2016. John Naylor is the new President/CEO."
-4,HealthPartners Inc.,6034240000,5741700000,5.095006705331174,5934390000,0.45891280426366865,99858000,2016-12-31,Mary Brainerd,2439110,HealthPartners numbers include its affiliated corporate entities.
+4,HealthPartners Inc.,6034240000,5741700000,5.095006705331174,5934390000,0.45891280426366865,99858000,2016-12-31,Mary Brainerd,2439110,HealthPartners numbers include its affiliated corporate entities. Brainerd retired in June 2017
 5,Allina Health System,4103550000,3937400000,4.219789708944989,4072740000,0.9241778460113804,30813000,2016-12-31,Penny Wheeler,2048310,
 6,Fairview Health Services,3487490000,3867600000,-9.828058744440996,3152330000,0.1350595987372007,335155000,2017-12-31,David Murphy,1570440,"Fairview Health Services and HealthEast Care System combined effective June 1, 2017.  James Hereford was appointed President/CEO effective December 12, 2016."
 7,Essentia Health,1990370000,1955600000,1.7779709552055636,1957000000,0.1260067223682029,33368000,2017-06-30,David Herman,1746490,This information is from Essentia Health's Consolidated Financial Statements.
-8,UCare,1705250000,3537500000,-51.79505300353357,1728830000,0.00784940624541856,-23573600,2016-12-31,"James Eppel, Jr.",926882,UCare’s revenue from Medical Assistance and MinnesotaCare programs decreased significantly in 2016. The Department of Human Services did not renew contracts with UCare for these programs (with the exception of Olmsted County) following a competitive bidding process in 2015.
+8,UCare,1705250000,3537500000,-51.79505300353357,1728830000,0.00784940624541856,-23573600,2016-12-31,James Eppel,926882,UCare’s revenue from Medical Assistance and MinnesotaCare programs decreased significantly in 2016. The Department of Human Services did not renew contracts with UCare for these programs (with the exception of Olmsted County) following a competitive bidding process in 2015.
 9,CentraCare Health,1243410000,1259600000,-1.2853286757700857,1229040000,0.41600517930529757,14374800,2016-06-30,Kenneth Holmen,1133330,
 10,HealthEast,995311000,974000000,2.187987679671458,1002350000,0.1573940205624172,-7034000,2016-08-31,Kathryn Correia,1086980,"HealthEast combined with Fairview Health Services in June 2017. 
 Fairview is the parent company with HealthEast and its entities falling under the Fairview umbrella. The financial information was sourced from the HealthEast audited consolidated statements for the fiscal year ending 8-31-16, Excess is loss from operations"
 11,Hennepin Healthcare System Inc.,972075000,916800000,6.029123036649215,1002150000,6.241226242831057,-30071600,2016-12-31,Jon Pryor,877729,
 12,North Memorial Health Care,896215000,839200000,6.793970448045758,893934000,0.06422320536924733,24422400,2016-12-31,Dr. J. Kevin Croston,1041210,North Memorial Health Care information is taken from the consolidated financial statement which includes North Memorial Medical Center and Maple Grove Hospital.
-13,Children's Minnesota,843622000,801500000,5.255396132252028,787865000,3.6486246209795383,55757000,2016-12-31,Robert Bonar Jr,1496820,
+13,Children's Minnesota,843622000,801500000,5.255396132252028,787865000,3.6486246209795383,55757000,2016-12-31,Robert Bonar,1496820,
 14,University of Minnesota Physicians,521783000,482200000,8.208834508502697,517853000,,3930830,2016-06-30,Barbara Daniels,809736,
 15,St. Luke's Hospital of Duluth,431938000,409100000,5.582498166707406,424788000,0.2979084961267589,7150020,2016-12-31,John Strange,818838,
 16,National Marrow Donor Program,391960000,397600000,-1.4185110663983904,370486000,13.033829982651291,21474200,2016-09-30,Dr. Jeffrey Chell,986996,
@@ -31,12 +31,12 @@ Fairview is the parent company with HealthEast and its entities falling under th
 47,Lakewood Health System,99376800,96200000,3.302286902286902,98139900,0.9348358973120486,114735000,2016-12-31,Tim Rice,494659,
 50,Hutchinson Health,90659000,,,87831100,0.10190714656018707,2827860,2016-12-31,Steve Larson,400463,
 53,Grand Itasca Clinic and Hospital,83880500,76000000,10.36907894736842,85215000,,-1334460,2016-12-31,Michael Youso,0,"Grand Itasca joined Fairview effective Jan. 1, 2017"
-56,Walker Methodist,67397500,66400000,1.5022590361445785,74044900,1.3933454504989058,-6647470,2016-12-31,Scott Riddle,280664,
-57,Nexus,67189900,76100000,-11.708409986859396,65877200,,1312710,2016-12-31,David Hutchinson,425550,"Hutcinson retired on March 3, 2017 and replaced by Brock Wolff. Nexus consolidated results do not include operating activities of Woodbourne Center"
-58,Volunteers of America Care Facilities,66750000,49300000,35.39553752535497,68531000,0.2382022471910112,-1781000,2017-06-30,Michael King,538642,
-60,St. Therese Foundation,65177300,49600000,31.405846774193545,69364000,1.0018610773996468,-4186730,2016-06-30,Barbara Rode,257059,
-61,Glencoe Regional Health Services,63770600,57500000,10.905391304347827,58661800,1.2950732782818415,5108850,2016-12-31,Jon Braband,268202,
-64,American Baptist Homes of the Midwest,62716400,78100000,-19.69731113956466,70505500,0.5585221728287976,-7789190,2016-08-31,David Zwickey,360966,"Total revenue from ABHM's consolidated financial statements was $83.6 million, up 7.1 percent"
+54,American Baptist Homes of the Midwest,83640000,78100000,7.0934699103713195,93221400,0.4188008130081301,-9581310,2016-08-31,David Zwickey,360966,"Total revenue from ABHM's consolidated financial statements was $83.6 million, up 7.1 percent"
+57,Walker Methodist,67397500,66400000,1.5022590361445785,74044900,1.3933454504989058,-6647470,2016-12-31,Scott Riddle,280664,
+58,Nexus,67189900,76100000,-11.708409986859396,65877200,,1312710,2016-12-31,David Hutchinson,425550,"Hutcinson retired on March 3, 2017 and replaced by Brock Wolff. Nexus consolidated results do not include operating activities of Woodbourne Center"
+59,Volunteers of America Care Facilities,66750000,49300000,35.39553752535497,68531000,0.2382022471910112,-1781000,2017-06-30,Michael King,538642,
+61,St. Therese Foundation,65177300,49600000,31.405846774193545,69364000,1.0018610773996468,-4186730,2016-06-30,Barbara Rode,257059,
+62,Glencoe Regional Health Services,63770600,57500000,10.905391304347827,58661800,1.2950732782818415,5108850,2016-12-31,Jon Braband,268202,
 65,Aitkin Community Hospital,60678500,57900000,4.798791018998273,27487500,1.342506818724919,3150860,2016-09-30,Chad Cooper,448492,
 66,Tri-County Health Care,60110200,57100000,5.271803852889667,59211000,1.269030879950491,899210,2016-12-31,Joel Beiswenger,331607,
 70,Riverview Healthcare Association,58513000,53300000,9.78048780487805,54399400,0.3465417941312187,4113540,2016-09-30,Carrie Michalski,352131,
