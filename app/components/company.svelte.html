@@ -147,7 +147,7 @@
 
           {{#if getValue(officers, 'total', publishYear)}}
             <div class="leadership-data compensation-revenue-ratio">
-              <span>{{ round(getValue(officers, 'total', publishYear) / getValue(finances, 'expenses', publishYear), 4) }}%</span> of expenses
+              <span>{{ round((getValue(officers, 'total', publishYear) / getValue(finances, 'expenses', publishYear)) * 100, 2) }}%</span> of expenses
             </div>
           {{/if}}
         </div>
